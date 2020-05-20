@@ -11,9 +11,45 @@ header {
 .wrapper {
   display: flex;
   .all-items {
+    background: #dddddd;
+    overflow: scroll;
     height: 100vh;
     width: calc(100vw - 150px);
-    background: #dddddd;
+    padding: 30px;
+    &--contents {
+      border: 1px solid red;
+      width: 400px;
+      height: 400px;
+      .post-title-date {
+        position: relative;
+        width: 100%;
+        padding: 5px;
+        height: 50px;
+        border: 2px solid gray;
+        .post-title {
+          text-align: center;
+        }
+        .post-date {
+          position: absolute;
+          bottom: 1px;
+          right: 1px;
+          font-size: 5px;
+        }
+      }
+      .post-contents {
+        .post-image {
+          padding: 5px;
+          text-align: center;
+        }
+        .post-text {
+          padding: 10px;
+          font-size: 10px;
+          width: 100px;
+          height: 50px;
+          background: gray;
+        }
+      }
+    }
   }
   .items-list {
     height: 100vh;
