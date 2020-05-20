@@ -1,25 +1,17 @@
-%h1
-  トップページ
-  .show-item
-    %h2一覧
-    %ul.menu
-      %li.list
-        %a(href="#")
-          服
-%h1
-  ○username
-  %p
-    = current_user.username
-%h1
-  ○username-edit
-  %p
-    = link_to "アカウント編集", edit_user_path(current_user)
+%header
 
-.item-content
-  - @items.each do |item|
-    = item.title
-    = item.image
-    = item.text
-
-.post-form
-  = link_to "投稿", new_item_path(current_user)
+.wrapper
+  .all-items
+    .all-items--contents
+      - @items.each do |item|
+        .post-title-date
+          .post-title
+            = item.title
+          .post-date
+            = item.created_at.strftime("%Y年%m月%d日 %H時%M分")
+        .post-contents
+          - if item.text.present?
+            %p.item__text
+              = item.text
+          = image_tag item.image, size: "300x300", class: 'post-contents__image' if item.image.present?
+  .items-list
