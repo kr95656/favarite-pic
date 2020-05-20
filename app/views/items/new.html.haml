@@ -1,0 +1,8 @@
+.contents-row
+  .container
+    -# = form_with model: @item do |f|
+    = form_for @item do |form|
+      = form.text_field :title, class: 'container__title', placeholder: 'type a title'
+      = form.text_field :text, class: 'container__text', placeholder: 'type a text'
+      = form.text_field :image, class: 'container__image', placeholder: "Image Url"
+      = form.submit "SEND", class: 'btn'
