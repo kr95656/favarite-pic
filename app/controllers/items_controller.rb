@@ -2,7 +2,6 @@ class ItemsController < ApplicationController
  
   def index
     @items =  Item.all
-    # @item = Item.find()
     @tags = Tag.all
   end
 
