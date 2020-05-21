@@ -1,0 +1,42 @@
+%h
+  服、帽子、靴のページに分ける
+= link_to "トップページ", root_path
+-# .wrapper
+-#   .all-items
+-#     - @items.each do |item|
+-#       .all-items--contents
+-#         .post-title-date
+-#           .post-title
+-#             = item.title
+-#           .post-date
+-#             = item.created_at.strftime("%Y年%m月%d日 %H時%M分")
+-#         .post-contents
+-#           .post-image
+-#             = image_tag item.image.to_s, size: "200x200", class: 'post-contents__image' if item.image.present?
+-#           .post-text
+-#             - if item.text.present?
+-#               %p.item__text
+-#                 = item.text
+.wrapper
+  .all-items
+    - @tags.items.each do |item|
+      .all-items--contents
+        .post-title-date
+          .post-title
+            = item.title
+          .post-date
+            = item.created_at.strftime("%Y年%m月%d日 %H時%M分")
+        .post-contents
+          .post-image
+            = image_tag item.image.to_s, size: "200x200", class: 'post-contents__image' if item.image.present?
+          .post-text
+            - if item.text.present?
+              %p.item__text
+                = item.text
+-# .wrapper
+-#   .all-items
+-#     = @tags.items.pluck(:title)
+-#     = @tags.items.pluck(:text)
+-#     = @tags.items.pluck(:image)
+    
+    
