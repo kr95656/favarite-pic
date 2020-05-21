@@ -1,9 +1,11 @@
 class TagsController < ApplicationController
   
-  def new
+  def index
+    @tags = Tag.all
   end
 
-  def create
+  def show
+    @tags = Tag.find(params[:id])
   end
 
 end

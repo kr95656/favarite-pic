@@ -17,12 +17,7 @@
               %p.item__text
                 = item.text
   .items-list
-    .h2
-      アイテム一覧
-      %ul
-        %li
-          = link_to "服"
-        %li
-          = link_to "帽子"
-        %li
-          = link_to "靴"
+    %h
+      アイテムタグLIST
+    = render partial: 'tags/tag', collection: @tags 
+
