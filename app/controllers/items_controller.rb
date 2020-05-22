@@ -19,7 +19,9 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @item = Item.find(params[:id])
+    @comments = @item.comments.includes(:user)
   end
 
   def edit

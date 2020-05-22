@@ -17,3 +17,22 @@
       - if @item.text.present?
         %p.item__text
           = @item.text
+  .container
+    - if current_user
+      = form_for [@item, @comment] do |form|
+        = form.text_area :text, class: 'container__text', placeholder: 'type a text'
+        = form.submit "SEND", class: 'btn'
+    - else
+      %strong
+        %p
+          ※※※ コメントの投稿には新規登
+          録/ログインが必要です ※※※
+    .comments
+      .h4
+        コメント一覧
+      - if @comments
+        - @comments.each do |comment|
+          .all-items--contents
+            .comment-text
+              = comment.text
+
