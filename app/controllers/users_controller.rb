@@ -13,7 +13,7 @@ class UsersController < ApplicationController
 
   def show
     @name = current_user.username
-    @items = current_user.items
+    @items = current_user.items.page(params[:page]).per(5).order(created_at: :desc)
   end
 
   private

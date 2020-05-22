@@ -29,8 +29,8 @@
             - if item.text.present?
               %p.item__text
                 = item.text
-
   .items-list
     %h
       アイテムタグLIST
     = render partial: 'tags/tag', collection: @tags 
+= paginate @items
