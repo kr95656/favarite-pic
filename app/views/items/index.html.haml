@@ -19,6 +19,8 @@
               .li
                 = link_to '詳細', item_path(item), method: :get 
               .li
+                = link_to '編集', edit_item_path(item), method: :get 
+              .li
                 = link_to '削除', item_path(item), method: :delete
           .post-text
             - if item.text.present?
@@ -28,4 +30,3 @@
     %h
       アイテムタグLIST
     = render partial: 'tags/tag', collection: @tags 
-
