@@ -11,6 +11,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @name = current_user.username
+    @items = current_user.items
+  end
+
   private
 
   def user_params
