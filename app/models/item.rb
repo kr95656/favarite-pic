@@ -5,4 +5,13 @@ class Item < ApplicationRecord
   has_many    :item_tags, dependent: :destroy
   
   validates :text, presence: true, unless: :image?
+
+  def self.search(search)
+    if search
+      Item.where('text LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
 end
