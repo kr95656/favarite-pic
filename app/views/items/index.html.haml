@@ -12,6 +12,14 @@
         .post-contents
           .post-image
             = image_tag item.image.to_s, size: "200x200", class: 'post-contents__image' if item.image.present?
+            .more
+              .span
+                = image_tag 'arrow_top.png'
+            %ul.more-list
+              .li
+                = link_to '詳細', item_path(item), method: :get 
+              .li
+                = link_to '削除', item_path(item), method: :delete
           .post-text
             - if item.text.present?
               %p.item__text
