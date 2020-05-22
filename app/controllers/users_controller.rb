@@ -11,6 +11,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @name = current_user.username
+    @items = current_user.items.page(params[:page]).per(5).order(created_at: :desc)
+  end
+
   private
 
   def user_params
