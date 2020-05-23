@@ -1,14 +1,15 @@
 class Item < ApplicationRecord
-  belongs_to  :user
-  has_many    :comments, dependent: :destroy
-  has_many    :tags, through: :item_tags, dependent: :destroy
   has_many    :item_tags, dependent: :destroy
+  has_many    :tags, through: :item_tags, dependent: :destroy
+  has_many    :comments, dependent: :destroy
+  belongs_to  :user
   
   validates :text, presence: true, unless: :image?
 
   def self.search(search)
     if search
-      Item.where('text LIKE(?)', "%#{search}%")
+      Item.where(
+        "(text LIKE(?)) OR (title LIKE(?))", "%#{search}%", "%#{search}%")
     else
       Item.all
     end
