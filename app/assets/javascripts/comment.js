@@ -6,10 +6,9 @@ $(function(){
                   </strong>
                   ${comment.text}
                 </p>`
+    return html;
   }
   
-
-
   $('#new_comment').on('submit', function(e){
     e.preventDefault();
     console.log(this)
