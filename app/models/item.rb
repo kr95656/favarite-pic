@@ -8,7 +8,8 @@ class Item < ApplicationRecord
 
   def self.search(search)
     if search
-      Item.where('text LIKE(?)', "%#{search}%")
+      Item.where(
+        "(text LIKE(?)) OR (title LIKE(?))", "%#{search}%", "%#{search}%")
     else
       Item.all
     end

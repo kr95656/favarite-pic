@@ -20,8 +20,8 @@
   .container
     - if current_user
       = form_for [@item, @comment] do |form|
-        = form.text_area :text, class: 'container__text', placeholder: 'type a text'
-        = form.submit "SEND", class: 'btn'
+        = form.text_area :text, class: 'container-text', placeholder: 'type a text'
+        = form.submit "SEND", class: 'submit-btn'
     - else
       %strong
         %p

@@ -12,36 +12,95 @@ $(function(){
       var current_user = "";
     }
 
-    var html = `<div class = "post-title-date">
-                  <div class="post-title">
-                    ${data.title}
-                  </div>
-                  <div class="post-date">
-                    ${data.created_at}
-                  </div>
-                </div>
-                <div class="post-contents">
-                  <div class="post-username">
-                    <a href= "/users/${data.id}/" data-method="get"><span>投稿者</span>${data.name}</a>
-                  </div>
-                  <div class="post-image">
-                    <img border="0" src="${data.image}" width="200" height="200" class="post-contents__image">
-                    <div class="more">
-                      <span><img src="/assets/arrow_top.png"></span>
+    if(data.text) {
+
+      var html = `<div class = "post-title-date">
+                    <div class="post-title">
+                      ${data.title}
                     </div>
-                    <ul class="more-list">
-                      <li>
-                        <a href= "/items/${data.id}/" data-method="get">詳細</a>
-                      </li>
-                      ${current_user}
-                    </ul>
+                    <div class="post-date">
+                      ${data.created_at}
+                    </div>
                   </div>
-                  <div class="post-text">
-                    <p class="item__text">
-                      ${data.text}
-                    </p>
+                  <div class="post-contents">
+                    <div class="post-username">
+                      <a href= "/users/${data.id}/" data-method="get"><span>投稿者</span>${data.name}</a>
+                    </div>
+                    <div class="post-image">
+                      <img border="0" src="${data.image}" width="200" height="200" class="post-contents__image">
+                      <div class="more">
+                        <span><img src="/assets/arrow_top.png"></span>
+                      </div>
+                      <ul class="more-list">
+                        <li>
+                          <a href= "/items/${data.id}/" data-method="get">詳細</a>
+                        </li>
+                        ${current_user}
+                      </ul>
+                    </div>
+                    <div class="post-text">
+                      <p class="item__text">
+                        ${data.text}
+                      </p>
+                    </div>
+                  </div>`
+    }else {
+      var html = `<div class = "post-title-date">
+                    <div class="post-title">
+                      ${data.title}
+                    </div>
+                    <div class="post-date">
+                      ${data.created_at}
+                    </div>
                   </div>
-                </div>`
+                  <div class="post-contents">
+                    <div class="post-username">
+                      <a href= "/users/${data.id}/" data-method="get"><span>投稿者</span>${data.name}</a>
+                    </div>
+                    <div class="post-image">
+                      <img border="0" src="${data.image}" width="200" height="200" class="post-contents__image">
+                      <div class="more">
+                        <span><img src="/assets/arrow_top.png"></span>
+                      </div>
+                      <ul class="more-list">
+                        <li>
+                          <a href= "/items/${data.id}/" data-method="get">詳細</a>
+                        </li>
+                        ${current_user}
+                      </ul>
+                    </div>
+                  </div>`
+    }
+    // var html = `<div class = "post-title-date">
+    //               <div class="post-title">
+    //                 ${data.title}
+    //               </div>
+    //               <div class="post-date">
+    //                 ${data.created_at}
+    //               </div>
+    //             </div>
+    //             <div class="post-contents">
+    //               <div class="post-username">
+    //                 <a href= "/users/${data.id}/" data-method="get"><span>投稿者</span>${data.name}</a>
+    //               </div>
+    //               <div class="post-image">
+    //                 <img border="0" src="${data.image}" width="200" height="200" class="post-contents__image">
+    //                 <div class="more">
+    //                   <span><img src="/assets/arrow_top.png"></span>
+    //                 </div>
+    //                 <ul class="more-list">
+    //                   <li>
+    //                     <a href= "/items/${data.id}/" data-method="get">詳細</a>
+    //                   </li>
+    //                   ${current_user}
+    //                 </ul>
+    //               </div>
+    //               <div class="post-text">
+    //                 <p class="item__text">
+    //                   ${data.text}
+    //                 </p>
+    //               </div>
+    //             </div>`
     search_list.append(html);
   }
 
@@ -71,5 +130,8 @@ $(function(){
         appendErrorMsg("一致する投稿がありません")
       }
     })
+    .fail(function(){
+      alert('error');
+    });
   });
 });
