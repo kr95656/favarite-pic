@@ -8,5 +8,8 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  namespace :api do
+    resources :items, only: :index, defaults: {format: 'json'}
+  end
   resources :users, only: [:edit, :update, :show]
 end
