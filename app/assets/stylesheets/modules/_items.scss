@@ -53,13 +53,27 @@ header {
 }
 
 .wrapper {
-  display: flex;
   .all-items {
     background: #dddddd;
     overflow: scroll;
     height: 100vh;
-    width: calc(100vw - 150px);
+    width: 100vw;
     padding: 30px;
+    .search-box {
+      text-align: center;
+      .search-form {
+        .search-input{
+          width: 60%;
+          height: 30px;
+          border: rgb(247, 244, 218) 3px solid;
+        }
+        .search-btn{
+          width: 60px;
+          cursor: pointer;
+        }
+
+      }
+    }
     &--contents {
       border: 1px solid red;
       width: 400px;
