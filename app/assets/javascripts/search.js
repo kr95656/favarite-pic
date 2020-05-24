@@ -1,5 +1,6 @@
 $(function(){
 
+  // var search_list = $(".items-contents");
   var search_list = $(".contents-row");
 
   function appendItem(data){
@@ -13,7 +14,7 @@ $(function(){
     }
 
     if(data.text) {
-
+      
       var html = `<div class = "post-title-date">
                     <div class="post-title">
                       ${data.title}
@@ -105,8 +106,11 @@ $(function(){
   }
 
   function appendErrorMsg(msg) {
-    var html = `<div class=''name>${msg}</div>`
-    search_list.append(html);
+    var html = `<div class='name'>${msg}</div>`
+    $(".items-contents").empty();
+    $(".items-contents").append(html);
+    // var html = `<div class='name'>${msg}</div>`
+    // search_list.append(html);
   }
 
   $(".search-input").on("keyup", function(){
