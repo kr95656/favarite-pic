@@ -106,9 +106,11 @@ $(function(){
   }
 
   function appendErrorMsg(msg) {
+    // var html = `<div class='name'>${msg}</div>`
+    // $(".items-contents").append(html);
     var html = `<div class='name'>${msg}</div>`
-    $(".items-contents").empty();
-    $(".items-contents").append(html);
+    $(".items-contents .contents-row:first").append(html);
+    // $('.items-contents:first-child').append(html);
     // var html = `<div class='name'>${msg}</div>`
     // search_list.append(html);
   }
