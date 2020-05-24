@@ -1,3 +1,2 @@
-.item-list 
-  = link_to tag_path(tag.id) do
-    = tag.name
+= link_to tag_path(tag.id), class: "tag-name" do
+  = tag.name
