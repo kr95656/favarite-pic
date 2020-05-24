@@ -8,9 +8,15 @@ header {
   background: gray;
   display: flex;
   .user_nav-grid-6 {
+    width: (100% / 2);
     display: flex;
-    // align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     .btn {
+      margin: 0;
+      width: calc(100% / 2);
+      display: block;
       text-decoration: none;
       display: block;
       width: 120px;
@@ -18,8 +24,7 @@ header {
       text-align: center;
       line-height: 40px;
       background: rgb(85, 240, 155);
-      margin-right: 10px;
-      // margin-top: 20px;
+      margin-right: 20px;
       border-radius: 5px;
       font-size: 16px;
       color: lavender;
@@ -37,7 +42,7 @@ header {
     }
   }
   .items-list {
-    width: 60%;
+    width: calc(100% / 2);
     .items-tag {
       color: white;
       font-weight: bold;

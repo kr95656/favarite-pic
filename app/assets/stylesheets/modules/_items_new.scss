@@ -5,9 +5,11 @@ body {
   background: rgb(243, 239, 238);
 }
 .contents_row {
+  align-items: center;
+  display: flex;
+  justify-content: center;
   height: 100vh;
   width: 100%;
-  padding: 10px;
   .container {
     padding: 30px;
     background: rgb(185, 240, 191);
