@@ -1,10 +1,33 @@
-.contents-row
+%header
+  -if user_signed_in?
+    .user_nav-grid-6
+      = link_to "マイページ",user_path(current_user.id), method: :get,  class: "btn mypage" 
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn logout"
+      = link_to "トップページ", root_path, class: "btn post"
+  -else
+    .grid-6
+      = link_to "ログイン", new_user_session_path, class: "btn"
+      = link_to "新規登録", new_user_registration_path, class: "btn" 
+  .items-list
+    %h.items-tag
+      Pic LIST
+    .item-tag
+      = render partial: 'tags/tag', collection: @tags
+.contents_row
   .container
-    -# = form_with model: @item do |f|
     = form_for @item do |form|
-      = form.text_field :title, class: 'container__title', placeholder: 'type a title'
-      = form.text_field :text, class: 'container__text', placeholder: 'type a text'
-      = form.collection_check_boxes :tag_ids, Tag.all, :id, :name do |tag| 
-        = tag.label {tag.check_box + tag.text }
-      = form.text_field :image, class: 'container__image', placeholder: "Image Url"
-      = form.submit "SEND", class: 'btn'
+      %ul
+        %li.post-form
+          投稿フォーム
+        %li.post-title
+          = form.text_field :title, class: 'container__title', placeholder: 'type a title'
+        %li.post-image
+          = form.text_field :image, class: 'container__image', placeholder: "Image Url"
+        %li.post-text
+          = form.text_field :text, class: 'container__text', placeholder: 'type a text'
+        %li.post-tag
+          %ul.tag-list
+            = form.collection_check_boxes :tag_ids, Tag.all, :id, :name do |tag| 
+              %li.tag= tag.label {tag.check_box + tag.text }
+        %li.post-send
+          = form.submit "SEND", class: 'btn'

@@ -7,6 +7,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @tags = Tag.all
   end
 
   def create
@@ -21,6 +22,7 @@ class ItemsController < ApplicationController
   def show
     @comment = Comment.new
     @item = Item.find(params[:id])
+    @tags = Tag.all
     @comments = @item.comments.includes(:user)
   end
 

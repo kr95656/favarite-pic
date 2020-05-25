@@ -10,14 +10,19 @@
     -# = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render 'layouts/notifications' 
-    -# -if user_signed_in?
-    -#   .user_nav-grid-6
-    -#     = link_to "マイページ",user_path(current_user.id), method: :get
-    -#     = link_to "ログアウト", destroy_user_session_path, method: :delete
-    -#     = link_to "投稿する", new_item_path
-    -#     = link_to "トップページ", root_path
-    -# -else
-    -#   .grid-6
-    -#     = link_to "ログイン", new_user_session_path
-    -#     = link_to "新規登録", new_user_registration_path 
+    -# %header
+    -#   -if user_signed_in?
+    -#     .user_nav-grid-6
+    -#       = link_to "マイページ",user_path(current_user.id), method: :get,  class: "btn mypage" 
+    -#       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn logout"
+    -#       = link_to "投稿する", new_item_path, class: "btn post"
+    -#   -else
+    -#     .grid-6
+    -#       = link_to "ログイン", new_user_session_path, class: "btn"
+    -#       = link_to "新規登録", new_user_registration_path, class: "btn" 
+    -#   .items-list
+    -#     %h.items-tag
+    -#       Pic LIST
+    -#     .item-tag
+    -#       = render partial: 'tags/tag', collection: @tags
     = yield
