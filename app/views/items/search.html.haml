@@ -22,8 +22,8 @@
             .li
               = link_to '詳細', item_path(item), method: :get
             - if user_signed_in? && current_user.id == item.user_id
-              .li
-                = link_to '編集', edit_item_path(item), method: :get 
+              -# .li
+              -#   = link_to '編集', edit_item_path(item), method: :get 
               .li
                 = link_to '削除', item_path(item), method: :delete
         .post-text

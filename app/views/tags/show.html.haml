@@ -1,8 +1,22 @@
-%h
-  服、帽子、靴のページに分ける
+%header
+  -if user_signed_in?
+    .user_nav-grid-6
+      = link_to "マイページ",user_path(current_user.id), method: :get,  class: "btn mypage" 
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn logout"
+      = link_to "投稿する", new_item_path, class: "btn post"
+      = link_to "トップページ", root_path, class: "btn post"
+  -else
+    .grid-6
+      = link_to "ログイン", new_user_session_path, class: "btn"
+      = link_to "新規登録", new_user_registration_path, class: "btn" 
+  .items-list
+    %h.items-tag
+      Pic LIST
+    .item-tag
+      = render partial: 'tags/tag', collection: @tags
 -# .wrapper
 -#   .all-items
--#     - @items.each do |item|
+-#     - @tag.items.each do |item|
 -#       .all-items--contents
 -#         .post-title-date
 -#           .post-title
@@ -18,24 +32,32 @@
 -#                 = item.text
 .wrapper
   .all-items
-    - @tag.items.each do |item|
-      .all-items--contents
-        .post-title-date
-          .post-title
-            = item.title
-          .post-date
-            = item.created_at.strftime("%Y年%m月%d日 %H時%M分")
-        .post-contents
-          .post-image
-            = image_tag item.image.to_s, size: "200x200", class: 'post-contents__image' if item.image.present?
-          .post-text
-            - if item.text.present?
-              %p.item__text
-                = item.text
--# .wrapper
--#   .all-items
--#     = @tags.items.pluck(:title)
--#     = @tags.items.pluck(:text)
--#     = @tags.items.pluck(:image)
-    
-    
+    -# .search-box
+    -#   = form_with url: search_items_path, local: true,method: :get, class: 'search-form' do |form|
+    -#     = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" 
+    -#     = form.submit "検索", class: "search-btn"
+    .tag-name
+      = @tag.name
+    .items-contents
+      - @tag.items.each do |item|
+        .contents-row{data: {item: {id: item.id}}}
+          .post-title= "<タイトル>: #{item.title}"
+          .post-content
+            -# = image_tag :style => "background-image: url(#{item.image})", class: 'post-image', size: "300x200" if item.image.present?
+            = image_tag item.image.to_s, class: 'post-image', size: "300x200" if item.image.present?
+            .post-text
+              - if item.text.present?
+                %p.item-text
+                  = item.text
+            %ul.more-list
+              .li
+                = link_to '詳細', item_path(item), class: 'link-btn', method: :get
+              - if user_signed_in? && current_user.id == item.user_id
+                -# .li
+                -#   = link_to '編集', edit_item_path(item), class: 'link-btn', method: :get 
+                .li
+                  = link_to '削除', item_path(item), class: 'link-btn', method: :delete
+          .post-username= link_to "投稿者: #{item.user.username}", user_path(item), class: 'show-user'
+          .post-date= item.created_at.strftime("%Y年%m月%d日 %H時%M分")
+%footer
+  = paginate @tags_pagenate
