@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @items = Item.search(params[:keyword])
+    @items = Item.search(params[:keyword]).includes(:user).order(created_at: :desc).page(params[:page]).per(10)
     respond_to do |format|
       format.html
       format.json
