@@ -56,7 +56,9 @@
   .contents-row
     .title= "<タイトル>: #{@item.title}"
     .content
-      = image_tag @item.image.to_s, class: 'image-post', size: "300x200" if @item.image.present?
+      -if @item.image.present?
+        .post-image{:style => "background-image: url(#{@item.image}"}  
+      -# = image_tag @item.image.to_s, class: 'image-post', size: "300x200" if @item.image.present?
       .text
         - if @item.text.present?
           %p.post-text
