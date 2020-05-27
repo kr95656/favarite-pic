@@ -16,18 +16,23 @@
 .contents_row
   .container
     = form_for @item do |form|
+      = render partial: 'layouts/error_message', local: { item: @item}
       %ul
         %li.post-form
           投稿フォーム
         %li.post-title
-          = form.text_field :title, class: 'container__title', placeholder: 'type a title'
+          = form.text_field :title, class: 'container__title', placeholder: 'タイトルを入力してください'
         %li.post-image
-          = form.text_field :image, class: 'container__image', placeholder: "Image Url"
+          = form.text_field :image, class: 'container__image', placeholder: "画像URLを入力してください"
         %li.post-text
-          = form.text_field :text, class: 'container__text', placeholder: 'type a text'
+          = form.text_field :text, class: 'container__text', placeholder: '一言どうぞ'
         %li.post-tag
           %ul.tag-list
-            = form.collection_check_boxes :tag_ids, Tag.all, :id, :name do |tag| 
+            -# = form.collection_check_boxes :tag_ids, Tag.all, :id, :name, include_hidden: false do |tag| 
+            -#   %li= tag.label {tag.check_box + tag.text}
+            -# = form.collection_check_boxes :tag_ids, Tag.all, :id, :name do |tag| 
+            = form.collection_check_boxes :tag_ids, Tag.all, :id, :name  do |tag| 
               %li.tag= tag.label {tag.check_box + tag.text }
-        %li.post-send
+        %li.post-send  
           = form.submit "SEND", class: 'btn'
+          -# = form.submit "SEND", class: 'btn'
