@@ -24,8 +24,9 @@
         .contents-row{data: {item: {id: item.id}}}
           .post-title= "<タイトル>: #{item.title}"
           .post-content
-            -# = image_tag :style => "background-image: url(#{item.image})", class: 'post-image', size: "300x200" if item.image.present?
-            = image_tag item.image.to_s, class: 'post-image', size: "300x200" if item.image.present?
+            -if item.image.present?
+              .post-image{:style => "background-image: url(#{item.image}"}  
+            -# = image_tag item.image.to_s, class: 'post-image', size: "300x200" if item.image.present?
             .post-text
               - if item.text.present?
                 %p.item-text
