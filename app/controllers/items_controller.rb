@@ -5,13 +5,31 @@ class ItemsController < ApplicationController
     @tags = Tag.all
   end
 
-  def new
+  def new  
     @item = Item.new
     @tags = Tag.all
+
+    2.times{@item.tags.build}
   end
 
+  
   def create
-    Item.create(item_params)
+    # Item.create(item_params)
+
+    # Item.create(item_params)
+
+    @item = Item.new(item_params)
+    
+    
+    if @item.save 
+      flash[:notice] = ''
+      #  render :index
+      redirect_to action: "index"
+      # binding.pry
+    else #作れてなかったら
+      flash[:alert] = '画像URL、タイトルを入力してください。'
+      render :new
+    end
   end
 
   def destroy
@@ -46,7 +64,19 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:title, :image, :text, tag_ids: []).merge(user_id: current_user.id)
+    params.require(:item).permit(:title, :image, :text, {tag_ids: []}).merge(user_id: current_user.id)
   end
+  # def item_params
+  #   params.require(:item).permit(:title, :image, :text, tag_ids: []).merge(user_id: current_user.id)
+  # end
+
+  # # 追加
+  # def tag_params
+  #   params.require(:tag).permit(:id)
+  # end
+
+  # def item_params
+  #   params.require(:item).permit(:title, :image, :text, tag_ids: []).merge(user_id: current_user.id)
+  # end
 
 end

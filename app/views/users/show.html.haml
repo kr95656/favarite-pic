@@ -1,7 +1,7 @@
 %header
   -if user_signed_in?
     .user_nav-grid-6
-      = link_to "マイページ",user_path(current_user.id), method: :get,  class: "btn mypage" 
+      -# = link_to "マイページ",user_path(current_user.id), method: :get,  class: "btn mypage" 
       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn logout"
       = link_to "トップページ", root_path, class: "btn post"
       = link_to "投稿する", new_item_path, class: "btn post"
@@ -41,7 +41,7 @@
                 -#   = link_to '編集', edit_item_path(item), class: 'link-btn', method: :get 
                 .li
                   = link_to '削除', item_path(item), class: 'link-btn', method: :delete
-          .post-username= link_to "投稿者: #{item.user.username}", user_path(item), class: 'show-user'
+          -# .post-username= link_to "投稿者: #{item.user.username}", user_path(item), class: 'show-user'
           .post-date= item.created_at.strftime("%Y年%m月%d日 %H時%M分")
 %footer
   = paginate @items

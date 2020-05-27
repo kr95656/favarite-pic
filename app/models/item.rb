@@ -3,9 +3,17 @@ class Item < ApplicationRecord
   has_many    :tags, through: :item_tags, dependent: :destroy
   has_many    :comments, dependent: :destroy
   belongs_to  :user
-  
-  validates :text, presence: true, unless: :image?
 
+  # accepts_nested_attributes_for :item_tags
+
+  validates_associated :tags
+  
+  # validates :text, presence: true, unless: :image?
+  # validates_associated :tags
+  
+  validates :image, :title, :tag_ids, presence: true 
+  
+  
   def self.search(search)
     if search
       Item.where(

@@ -1,8 +1,17 @@
 $(function(){
   function buildHTML(comment){
     var html = `<li class="comment-lsit">
-                  ${comment.user_name}: ${comment.text}
+                  <p class="comment-user">
+                    &lt;${comment.user_name}&gt;: ${comment.text}
+                  </p>
+                  <p class="comment-date">
+                    ${comment.created_at}
+                  </p>
                 </li>`
+
+    // var html = `<li class="comment-lsit">
+    //               <${comment.user_name}>: ${comment.text}
+    //             </li>`
     return html;
   }
 
