@@ -17,17 +17,17 @@ class ItemsController < ApplicationController
     # Item.create(item_params)
 
     # Item.create(item_params)
-
+    @tags = Tag.all
     @item = Item.new(item_params)
     
     
     if @item.save 
-      flash[:notice] = ''
+      flash[:notice] = '投稿が完了しました。'
+      redirect_to action: "index", notice: '投稿が完了しました。'
       #  render :index
-      redirect_to action: "index"
-      # binding.pry
+      # render :index
     else #作れてなかったら
-      flash[:alert] = '画像URL、タイトルを入力してください。'
+      flash.now[:alert] = '画像URL,タイトル,タグを入力してください。'
       render :new
     end
   end

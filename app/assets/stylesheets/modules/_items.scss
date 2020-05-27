@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
+.notification {
+  z-index: 2;
+  position: fixed;
+  width: 100%;
+}
+
 header {
   z-index: 1;
   position: relative;
