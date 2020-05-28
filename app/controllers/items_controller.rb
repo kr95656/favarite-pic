@@ -33,8 +33,19 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+    # item = Item.find(params[:id])
+    # item.destroy
     item = Item.find(params[:id])
-    item.destroy
+
+    if item.destroy
+      flash[:notice] = '投稿を削除しました。'
+      redirect_to action: "index", notice: '投稿を削除しました。'
+    else 
+      flash.now[:alert] = '投稿を削除できませんでした。'
+      render :index
+    end
+
+
   end
 
   def show

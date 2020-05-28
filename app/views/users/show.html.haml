@@ -21,7 +21,8 @@
     -#     = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" 
     -#     = form.submit "検索", class: "search-btn"
     .mypage
-      マイページ
+      = "#{@name}さんのページ"
+      -# マイページ
     .items-contents
       - @items.each do |item|
         .contents-row{data: {item: {id: item.id}}}
@@ -35,7 +36,7 @@
                   = item.text
             %ul.more-list
               .li
-                = link_to '詳細', item_path(item), class: 'link-btn', method: :get
+                = link_to 'コメントする', item_path(item), class: 'link-btn', method: :get
               - if user_signed_in? && current_user.id == item.user_id
                 -# .li
                 -#   = link_to '編集', edit_item_path(item), class: 'link-btn', method: :get 

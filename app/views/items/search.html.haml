@@ -20,7 +20,7 @@
               = image_tag 'arrow_top.png'
           %ul.more-list
             .li
-              = link_to '詳細', item_path(item), method: :get
+              = link_to 'コメントする', item_path(item), method: :get
             - if user_signed_in? && current_user.id == item.user_id
               -# .li
               -#   = link_to '編集', edit_item_path(item), method: :get 

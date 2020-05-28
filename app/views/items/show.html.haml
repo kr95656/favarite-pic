@@ -63,7 +63,8 @@
         - if @item.text.present?
           %p.post-text
             = @item.text
-    .username= link_to "投稿者: #{@item.user.username}", user_path(@item), class: 'show-user'
+    .username= link_to "投稿者: #{@item.user.username}", user_path(@item.user), class: 'show-user'
+    -# .username= link_to "投稿者: #{@item.user.username}", user_path(@item), class: 'show-user'
     .date= @item.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .comments-container
     %ul.comment-form--menu
