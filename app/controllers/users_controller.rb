@@ -13,8 +13,12 @@ class UsersController < ApplicationController
 
   def show
     @tags = Tag.all
-    @name = current_user.username
-    @items = current_user.items.page(params[:page]).per(10).order(created_at: :desc)
+    user = User.find(params[:id])
+    @name = user.username
+    @items = user.items.page(params[:page]).per(10).order(created_at: :desc)
+    # @tags = Tag.all
+    # @name = current_user.username
+    # @items = current_user.items.page(params[:page]).per(10).order(created_at: :desc)
   end
 
   private
