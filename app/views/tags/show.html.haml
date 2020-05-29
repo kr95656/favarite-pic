@@ -39,7 +39,8 @@
     .tag-name
       = @tag.name
     .items-contents
-      - @tag.items.each do |item|
+      -# - @tag.items.each do |item|
+      - @tags_pagenate.each do |item|
         .contents-row{data: {item: {id: item.id}}}
           .post-title= "<タイトル>: #{item.title}"
           .post-content
