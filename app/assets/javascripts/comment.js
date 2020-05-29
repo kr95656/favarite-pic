@@ -1,13 +1,11 @@
 $(function(){
   function buildHTML(comment){
-    var html = `<li class="comment-lsit">
-                  <p class="comment-user">
+    var html = `<p class="user">
                     &lt;${comment.user_name}&gt;: ${comment.text}
                   </p>
-                  <p class="comment-date">
+                  <p class="date">
                     ${comment.created_at}
-                  </p>
-                </li>`
+                  </p>`
 
     // var html = `<li class="comment-lsit">
     //               <${comment.user_name}>: ${comment.text}
@@ -66,10 +64,10 @@ $(function(){
       var html = buildHTML(data);
       $('.comment-menu').append(html);
       $('.container-text').val('');
-      $(".submit-btn").prop("disabled", false);
+      $('.submit-btn').prop("disabled", false);
     })
     .fail(function(){
-      // alert('error');
+      alert('error');
     })
   })
         
