@@ -48,11 +48,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-
   <<: *default
   database: favarite-pic_production
   username: favarite-pic
   password: <%= ENV['FAVARITE-PIC_DATABASE_PASSWORD'] %>
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
+  # adapter: postgresql
+  # encoding: unicode
+  # pool: 5
