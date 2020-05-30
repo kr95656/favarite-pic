@@ -63,5 +63,6 @@ gem 'pry-rails'
 gem 'kaminari'
 
 group :production do
-  gem 'pg'
+  # gem 'pg'
+   gem 'unicorn', '5.4.1'
 end
