@@ -52,6 +52,3 @@ production:
   database: favarite-pic_production
   username: favarite-pic
   password: <%= ENV['FAVARITE-PIC_DATABASE_PASSWORD'] %>
-  # adapter: postgresql
-  # encoding: unicode
-  # pool: 5
