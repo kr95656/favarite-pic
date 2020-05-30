@@ -1,11 +1,11 @@
 $(function(){
   function buildHTML(comment){
     var html = `<p class="user">
-                    &lt;${comment.user_name}&gt;: ${comment.text}
-                  </p>
-                  <p class="date">
-                    ${comment.created_at}
-                  </p>`
+                  &lt;${comment.user_name}&gt;: ${comment.text}
+                </p>
+                <p class="date">
+                  ${comment.created_at}
+                </p>`
 
     // var html = `<li class="comment-lsit">
     //               <${comment.user_name}>: ${comment.text}

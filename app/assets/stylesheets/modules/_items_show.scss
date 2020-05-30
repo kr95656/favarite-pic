@@ -118,28 +118,50 @@
         }
       }
     }
-  }
-}
-
-.comments-form {
-  width: 100%;
-  background: red($color: #000000);
-  .comments-all {
-    font-size: 20px;
-    letter-spacing: 4px;
-  }
-  .comment-menu {
-    overflow: auto;
-    height: 300px;
-    width: 100%;
-    .comment-list {
-      .user {
-        text-align: right;
+    .comments-form {
+      width: 100%;
+      background: red($color: #000000);
+      .comments-all {
+        font-size: 20px;
+        letter-spacing: 4px;
       }
-      .date {
-       font-size: 10px;
+      .comment-menu {
+        overflow: auto;
+        height: 300px;
+        width: 100%;
+        .comment-list {
+          .user {
+            
+          }
+          .date {
+           font-size: 10px;
+          }
+        }
       }
     }
   }
 }
+
+
+// .comments-form {
+//   width: 100%;
+//   background: red($color: #000000);
+//   .comments-all {
+//     font-size: 20px;
+//     letter-spacing: 4px;
+//   }
+//   .comment-menu {
+//     overflow: auto;
+//     height: 300px;
+//     width: 100%;
+//     .comment-list {
+//       .user {
+//         text-align: right;
+//       }
+//       .date {
+//        font-size: 10px;
+//       }
+//     }
+//   }
+// }
 
