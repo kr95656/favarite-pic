@@ -13,7 +13,7 @@ class Item < ApplicationRecord
   
   validates :image, :title, :tag_ids, presence: true 
 
-  mount_uploader :image, ImageUploader
+  # mount_uploader :image, ImageUploader
   
   
   def self.search(search)
