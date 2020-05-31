@@ -12,6 +12,8 @@ class Item < ApplicationRecord
   # validates_associated :tags
   
   validates :image, :title, :tag_ids, presence: true 
+
+  mount_uploader :image, ImageUploader
   
   
   def self.search(search)
