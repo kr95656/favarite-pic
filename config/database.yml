@@ -50,5 +50,8 @@ test:
 production:
   <<: *default
   database: favarite-pic_production
-  username: favarite-pic
-  password: <%= ENV['FAVARITE-PIC_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
+  # username: favarite-pic
+  # password: <%= ENV['FAVARITE-PIC_DATABASE_PASSWORD'] %>
