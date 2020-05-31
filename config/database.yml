@@ -49,11 +49,13 @@ test:
 #
 production:
   <<: *default
-  database: favarite-pic_production
-  username: favarite-pic
+  database: db/production.postgresql
+  url: <%= ENV['DATABASE_URL'] %>
   adapter: postgresql
   encoding: unicode
   pool: 5
+  # database: favarite-pic_production
+  # username: favarite-pic
   # username: root
   # password: <%= ENV['DATABASE_PASSWORD'] %>
   # socket: /var/lib/mysql/mysql.sock
