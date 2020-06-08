@@ -14,9 +14,16 @@ $(function() {
 
   // ];
 
-  let slider  =         $('.slider');
-  let image   =         $('.slide-item');
-  console.log( slider.find(image).sort)
+  let slider    =         $('.slider');
+  let image     =         $('.slide-item');
+
+  
+  
+  
+  
+  // console.log( slider.find(image).sort)
+
+
 
   function randomize(item){
     slider.find(item).sort(function(){
@@ -39,7 +46,30 @@ $(function() {
     });
 
 
-  })
+  });
+
+  $(function(){
+    $('.menu-trigger').click(function(){
+      $(this).toggleClass("active");
+      $(this).next().toggleClass("on_animation");
+      $('.gbluv_block').toggle();
+      $('ul li').hide();
+      $('ul li').each(function(i) {
+        $(this).delay(80 * i).fadeIn(500);
+      });
+
+      // $(this).toggleClass("active");
+      // $(this).next().toggleClass("onanimation");
+      // $('ul li').hide();
+      // $('ul li').each(function(i) {
+      //   $(this).delay(80 * i).fadeIn(500);
+      // });
+
+
+    });
+
+  });
+
  
 
 });

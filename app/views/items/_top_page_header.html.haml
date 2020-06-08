@@ -1,3 +1,16 @@
+.gbluv_box
+  = link_to "#", class: "menu-trigger" do
+    %i.fas.fa-bars
+      %span
+      %span
+      %span
+.gbluv_block
+  %ul.gblnv_list
+    = render partial: 'tags/tag', collection: @tags 
+ 
+
+
+
 %ul.slider
   %li.slide-item
     = image_tag "bence-balla-schottner-Rm7Qbb1FyQM-unsplash.jpg", class: "header-image"
