@@ -72,8 +72,8 @@ $(function() {
       $(this).toggleClass("active");
       $(this).next().toggleClass("on_test");
       $('.header__tabs-menu__top-list__gbluv-block').toggle();
-      $('.gbluv-block__top-menu .abe').hide();
-      $('.gbluv-block__top-menu .abe').each(function(i) {
+      $('.gbluv-block__top-menu .page-lsit').hide();
+      $('.gbluv-block__top-menu .page-lsit').each(function(i) {
         $(this).delay(80 * i).fadeIn(500);
       });
     });

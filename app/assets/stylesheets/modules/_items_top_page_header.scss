@@ -59,6 +59,22 @@
 //   }
 // }
 
+@mixin trigger {
+  text-decoration: none;
+  color: black;
+  font-size: 2.5em;
+
+}
+
+@mixin list-name {
+  text-decoration: none;
+  background: #ffffff;
+  color: black;
+  font-size: 1.25em;
+
+}
+
+
 header {
 
   .header__tabs-menu {
@@ -70,9 +86,7 @@ header {
       &__gbluv_box {
 
         .menu-trigger {
-          text-decoration: none;
-          color: black;
-          font-size: 2.5em;
+          @include trigger();
 
         }
       }
@@ -84,10 +98,7 @@ header {
           .tabs__hiden__menu--list {
             
             .tag-name {
-              text-decoration: none;
-              background: #ffffff;
-              color: black;
-              font-size: 1.25em;
+              @include list-name();
 
             }
           }
@@ -97,17 +108,29 @@ header {
     }
 
     &__top-list {
+
       &__gbluv_box {
+
         .top-trigger {
+          @include trigger();
 
         }
 
       }
       &__gbluv-block {
+        display: none;
+
         .gbluv-block__top-menu {
+
           .page-lsit {
 
+            .page-btn {
+              @include list-name();
+
+            }
+
           }
+
         }
 
       }
