@@ -60,92 +60,117 @@
 // }
 
 @mixin trigger {
-  text-decoration: none;
-  color: black;
-  font-size: 2.5em;
+  text-decoration:                  none;
+  color:                            black;
+  font-size:                        2.5em;
 
 }
 
 @mixin list-name {
-  text-decoration: none;
-  background: #ffffff;
-  color: black;
-  font-size: 1.25em;
+  text-decoration:                  none;
+  background:                       #ffffff;
+  color:                            black;
+  font-size:                        1.25em;
+
+}
+
+@mixin decoration {
+  padding:                           0.625em;
+  margin:                            1.25em;
+  border-radius:                     0.25em;
+  background:                       #ffffff;
+  text-align:                        center;
 
 }
 
 
-header {
 
+header {
   .header__tabs-menu {
-    display: flex;
-    justify-content: space-between;
+    z-index:                          1;
+    display:                          flex;
+    justify-content:                  space-between;
+    position:                         relative;
 
     &__pic-list {
-
+      @include                        decoration();
+      right:                          0;
+      top:                            0;
+      position:                       absolute;
       &__gbluv_box {
-
+  
         .menu-trigger {
-          @include trigger();
-
+          @include                    trigger();
+  
         }
+
       }
       &__gbluv_block {
-        display: none;
+        display:                      none;
     
         .gblnv_block__pic-menu{
     
           .tabs__hiden__menu--list {
-            
-            .tag-name {
-              @include list-name();
+            margin:                   0 0 0.375em 0;
 
+            .tag-name {
+              @include                list-name();
+  
             }
           }
         }
       }
-
+  
     }
-
+  
     &__top-list {
+      @include                        decoration();
+      left:                           0;
+      top:                            0;
+      position:                       absolute;
 
       &__gbluv_box {
-
+  
         .top-trigger {
-          @include trigger();
-
+          @include                    trigger();
+  
         }
-
+  
       }
       &__gbluv-block {
-        display: none;
-
+        display:                      none;
+  
         .gbluv-block__top-menu {
-
+  
           .page-lsit {
+            margin:                   0 0 0.375em 0;
 
             .page-btn {
-              @include list-name();
-
+              @include                list-name();
+  
             }
-
+  
           }
-
+  
         }
-
+  
       }
-
+  
     }
   }
-
   .slider {
     // height: 500px;
-    width: 100%;
-
+    width:                            100%;
+  
     .header-image {
-      height: 100%;
-      width: 100%;
-
+      height:                         100%;
+      width:                          100%;
+  
     }
   }
 }
+
+
+
+
+

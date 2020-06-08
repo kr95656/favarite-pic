@@ -21,21 +21,6 @@
               = link_to "ログイン", new_user_session_path, class: "page-btn"
             %li.page-lsit
               = link_to "新規登録", new_user_registration_path, class: "page-btn" 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   %li.header__tabs-menu__pic-list
     .header__tabs-menu__pic-list__gbluv_box
       = link_to "#", class: "menu-trigger" do
@@ -44,10 +29,6 @@
     .header__tabs-menu__pic-list__gbluv_block
       %ul.gblnv_block__pic-menu
         = render partial: 'tags/tag', collection: @tags 
-
- 
-
-
 
 %ul.slider
   %li.slide-item
