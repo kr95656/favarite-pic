@@ -66,7 +66,7 @@ header {
     justify-content: space-between;
 
     &__pic-list {
-      
+
       &__gbluv_box {
 
         .menu-trigger {
@@ -92,6 +92,24 @@ header {
             }
           }
         }
+      }
+
+    }
+
+    &__top-list {
+      &__gbluv_box {
+        .top-trigger {
+
+        }
+
+      }
+      &__gbluv-block {
+        .gbluv-block__top-menu {
+          .page-lsit {
+
+          }
+        }
+
       }
 
     }
