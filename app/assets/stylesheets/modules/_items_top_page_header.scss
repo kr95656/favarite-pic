@@ -61,32 +61,41 @@
 
 header {
 
-  .gbluv_box {
+  .header__tabs-menu {
+    display: flex;
+    justify-content: space-between;
 
-    .menu-trigger {
-      text-decoration: none;
-      color: black;
-      font-size: 2.5em;
-    }
-  }
+    &__pic-list {
+      
+      &__gbluv_box {
 
-  .gbluv_block {
-    display: none;
-
-    .gblnv_list {
-
-      .tabs__hiden__menu--list {
-        
-        .tag-name {
+        .menu-trigger {
           text-decoration: none;
-          background: #ffffff;
           color: black;
-          font-size: 1.25em;
+          font-size: 2.5em;
+
         }
       }
+      &__gbluv_block {
+        display: none;
+    
+        .gblnv_block__pic-menu{
+    
+          .tabs__hiden__menu--list {
+            
+            .tag-name {
+              text-decoration: none;
+              background: #ffffff;
+              color: black;
+              font-size: 1.25em;
+
+            }
+          }
+        }
+      }
+
     }
   }
-   
 
   .slider {
     // height: 500px;

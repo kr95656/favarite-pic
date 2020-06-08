@@ -1,10 +1,22 @@
-.gbluv_box
-  = link_to "#", class: "menu-trigger" do
-    %i.fas.fa-bars
-    Pic List
-.gbluv_block
-  %ul.gblnv_list
-    = render partial: 'tags/tag', collection: @tags 
+%ul.header__tabs-menu
+  %li.header__tabs-menu__top-list
+    .header__tabs-menu__top-list__gbluv_box
+      = link_to "#", class: "top-trigger" do
+        %i.fas.fa-bars
+        Top
+    .header__tabs-menu__top-list__gbluv-block
+      %ul.gbluv-block__top-menu
+        %li.abe
+          = link_to "toppage", "#" 
+  %li.header__tabs-menu__pic-list
+    .header__tabs-menu__pic-list__gbluv_box
+      = link_to "#", class: "menu-trigger" do
+        Pic List
+        %i.fas.fa-bars
+    .header__tabs-menu__pic-list__gbluv_block
+      %ul.gblnv_block__pic-menu
+        = render partial: 'tags/tag', collection: @tags 
+
  
 
 
