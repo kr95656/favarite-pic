@@ -6,7 +6,7 @@ $(function() {
     dots: false,
     autoplay: true,
     autoplaySpeed: 3000,
-    speed: 800,
+    speed: 1500,
     infinite: true,
   });
 
