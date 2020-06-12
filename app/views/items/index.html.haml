@@ -17,7 +17,7 @@
 
 .wrapper
   = render partial: 'top.page_main-content'
-
+  
   -# .all-items
   -#   .search-box
   -#     = form_with url: search_items_path, local: true,method: :get, class: 'search-form' do |form|
@@ -46,5 +46,7 @@
   -#         .post-username= link_to "投稿者: #{item.user.username}", user_path(item.user.id), class: 'show-user'
   -#         -# .post-username= link_to "投稿者: #{item.user.username}", user_path(item.id), class: 'show-user'
   -#         .post-date= item.created_at.strftime("%Y年%m月%d日 %H時%M分")
-%footer
-  = paginate @items
+
+
+-# %footer
+-#   = paginate @items
