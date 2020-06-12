@@ -16,33 +16,35 @@
   = render partial: 'top_page_header'
 
 .wrapper
-  .all-items
-    .search-box
-      = form_with url: search_items_path, local: true,method: :get, class: 'search-form' do |form|
-        = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" 
-        = form.submit "検索", class: "search-btn"
-    .items-contents
-      - @items.each do |item|
-        .contents-row{data: {item: {id: item.id}}}
-          .post-title= "<タイトル>: #{item.title}"
-          .post-content
-            -if item.image.present?
-              .post-image{:style => "background-image: url(#{item.image}"}  
-            -# = image_tag item.image.to_s, class: 'post-image', size: "300x200" if item.image.present?
-            .post-text
-              - if item.text.present?
-                %p.item-text
-                  = item.text
-            %ul.more-list
-              .li
-                = link_to 'コメントする', item_path(item.id), class: 'link-btn', method: :get
-              - if user_signed_in? && current_user.id == item.user_id
-                -# .li
-                -#   = link_to '編集', edit_item_path(item), class: 'link-btn', method: :get 
-                .li
-                  = link_to '削除', item_path(item), class: 'link-btn', method: :delete
-          .post-username= link_to "投稿者: #{item.user.username}", user_path(item.user.id), class: 'show-user'
-          -# .post-username= link_to "投稿者: #{item.user.username}", user_path(item.id), class: 'show-user'
-          .post-date= item.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  = render partial: 'top.page_main-content'
+
+  -# .all-items
+  -#   .search-box
+  -#     = form_with url: search_items_path, local: true,method: :get, class: 'search-form' do |form|
+  -#       = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" 
+  -#       = form.submit "検索", class: "search-btn"
+  -#   .items-contents
+  -#     - @items.each do |item|
+  -#       .contents-row{data: {item: {id: item.id}}}
+  -#         .post-title= "<タイトル>: #{item.title}"
+  -#         .post-content
+  -#           -if item.image.present?
+  -#             .post-image{:style => "background-image: url(#{item.image}"}  
+  -#           -# = image_tag item.image.to_s, class: 'post-image', size: "300x200" if item.image.present?
+  -#           .post-text
+  -#             - if item.text.present?
+  -#               %p.item-text
+  -#                 = item.text
+  -#           %ul.more-list
+  -#             .li
+  -#               = link_to 'コメントする', item_path(item.id), class: 'link-btn', method: :get
+  -#             - if user_signed_in? && current_user.id == item.user_id
+  -#               -# .li
+  -#               -#   = link_to '編集', edit_item_path(item), class: 'link-btn', method: :get 
+  -#               .li
+  -#                 = link_to '削除', item_path(item), class: 'link-btn', method: :delete
+  -#         .post-username= link_to "投稿者: #{item.user.username}", user_path(item.user.id), class: 'show-user'
+  -#         -# .post-username= link_to "投稿者: #{item.user.username}", user_path(item.id), class: 'show-user'
+  -#         .post-date= item.created_at.strftime("%Y年%m月%d日 %H時%M分")
 %footer
   = paginate @items
