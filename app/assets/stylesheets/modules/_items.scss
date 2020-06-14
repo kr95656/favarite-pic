@@ -576,7 +576,7 @@ $breakpoints: (
           }
         }
       }
-    }
+     }
     @include mq('min', 'lg') {   //  min-width: 1023px max-width: 1200px
       .items-contents {
         flex-wrap:wrap;
