@@ -431,6 +431,12 @@ $breakpoints: (
 }
 
 
+@mixin  centering_item_and_link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 
 
 * {
@@ -443,6 +449,16 @@ $breakpoints: (
   width: 100%;
 }
 
+.link-btn {
+  text-decoration: none;
+  color: black;
+  opacity: 0.4;
+}
+
+.link-btn:hover {
+  opacity: 1;
+  transition: 0.2s;
+}
 
 
 .wrapper {
@@ -496,20 +512,38 @@ $breakpoints: (
     }
     @include mq('max', 'md') {   //max-width: ~767px
       .items-contents {
-        // width: 100%;
-        // height: 100%;
+        
         .item-row {
-          display:flex;
-          justify-content:center;
           margin: 1em auto;
-          align-items:center;
           margin: 0 auto;
+          @include centering_item_and_link();
           .contents-row {
             height: 19em;
             width: 19em;
-            // height: 16.875em;
-            // width: 16.875em;
             background-size: cover;
+          }
+          .item-nav {
+            display:flex;
+            justify-content:space-evenly;;
+            align-items:center;
+            width: 100%;
+            margin: 10px 0 60px 0;
+            &__show-page {
+              &__comment {
+                margin: 5px 0 10px 0;
+              }
+              &__user {
+
+              }
+            }
+            &__current-user {
+              &__edit {
+                margin: 5px 0 10px 0;
+              }
+              &__delete {
+
+              }
+            }
           }
         }
       }
@@ -543,15 +577,39 @@ $breakpoints: (
         margin: 0 auto;
         align-items:center;
         .item-row {
-          display:flex;
-          justify-content:center;
-          margin: 1em auto;
-          align-items:center;
+          // display:flex;
+          // justify-content:center;
+          // margin: 1em auto;
+          // align-items:center;
+          @include centering_item_and_link();
           width: calc(100% / 2);
           .contents-row {
             height: 19em;
             width: 19em;
             background-size: cover;
+          }
+          .item-nav {
+            display:flex;
+            justify-content:space-evenly;;
+            align-items:center;
+            width: 100%;
+            margin: 10px 0 60px 0;
+            &__show-page {
+              &__comment {
+                margin: 5px 0 10px 0;
+              }
+              &__user {
+
+              }
+            }
+            &__current-user {
+              &__edit {
+                margin: 5px 0 10px 0;
+              }
+              &__delete {
+
+              }
+            }
           }
         }
       }
@@ -585,15 +643,36 @@ $breakpoints: (
         margin: 0 auto;
         align-items:center;
         .item-row {
-          display:flex;
-          justify-content:center;
           margin: 1em auto;
-          align-items:center;
           width: calc(100% / 3);
+          @include centering_item_and_link();
           .contents-row {
             height: 19em;
             width: 19em;
             background-size: cover;
+          }
+          .item-nav {
+            display:flex;
+            justify-content:space-evenly;;
+            align-items:center;
+            width: 100%;
+            margin: 10px 0 60px 0;
+            &__show-page {
+              &__comment {
+                margin: 5px 0 10px 0;
+              }
+              &__user {
+
+              }
+            }
+            &__current-user {
+              &__edit {
+                margin: 5px 0 10px 0;
+              }
+              &__delete {
+
+              }
+            }
           }
         }
       }

@@ -35,17 +35,17 @@
   -#             - if item.text.present?
   -#               %p.item-text
   -#                 = item.text
-  -#           %ul.more-list
-  -#             .li
-  -#               = link_to 'コメントする', item_path(item.id), class: 'link-btn', method: :get
-  -#             - if user_signed_in? && current_user.id == item.user_id
-  -#               -# .li
-  -#               -#   = link_to '編集', edit_item_path(item), class: 'link-btn', method: :get 
-  -#               .li
-  -#                 = link_to '削除', item_path(item), class: 'link-btn', method: :delete
-  -#         .post-username= link_to "投稿者: #{item.user.username}", user_path(item.user.id), class: 'show-user'
-  -#         -# .post-username= link_to "投稿者: #{item.user.username}", user_path(item.id), class: 'show-user'
-  -#         .post-date= item.created_at.strftime("%Y年%m月%d日 %H時%M分")
+          -#   %ul.more-list
+          -#     .li
+          -#       = link_to 'コメントする', item_path(item.id), class: 'link-btn', method: :get
+          -#     - if user_signed_in? && current_user.id == item.user_id
+          -#       .li
+          -#         = link_to '編集', edit_item_path(item), class: 'link-btn', method: :get 
+          -#       .li
+          -#         = link_to '削除', item_path(item), class: 'link-btn', method: :delete
+          -# .post-username= link_to "投稿者: #{item.user.username}", user_path(item.user.id), class: 'show-user'
+          -# .post-username= link_to "投稿者: #{item.user.username}", user_path(item.id), class: 'show-user'
+          -# .post-date= item.created_at.strftime("%Y年%m月%d日 %H時%M分")
 
 
 -# %footer
