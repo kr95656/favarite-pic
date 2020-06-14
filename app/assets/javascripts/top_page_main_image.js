@@ -1,17 +1,11 @@
 $(function() {
-  // let data_id = $(".contents-row").dataset.id;
-  let data_id = $(".contents-row").data();
-
-  // console.log(data_id);
-
   if($('.contents-row:odd')){
     $(".contents-row:odd").css({
       "background-size": "cover",
-      "height": "370px",
-      "width": "270px",
+      "height": "23em",
+      "width": "19em",    
+      // "height": "23.125em",
+      // "width": "16.875em",    
     });
-
   }
-
-
 });
