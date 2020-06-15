@@ -1,6 +1,6 @@
 .comments-container
   %ul.comment-form--menu
-    %li.comment-form--menu-list <コメント投稿フォーム>
+    %li.comment-form--menu-list CommentForm
     - if current_user
       = form_for [@item, @comment] do |form|
         %ul.form-menu
@@ -15,7 +15,7 @@
           録/ログインが必要です ※※※
     .comments-form
       %li.comments-all 
-        <コメント一覧>
+        Comment Lists
       - if @comments
         .comment-menu
           - @comments.each do |comment|
