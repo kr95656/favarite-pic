@@ -1,101 +1,64 @@
--# .contents-row
--#   .post-title-date
--#     .post-title
--#       = @item.title
--#     .post-date
--#       = @item.created_at.strftime("%Y年%m月%d日 %H時%M分")
--#   .post-contents
--#     .post-image
--#       = image_tag @item.image.to_s, size: "200x200", class: 'post-contents__image' if @item.image.present?
--#       .more
--#         .span
--#           = image_tag 'arrow_top.png'
--#       %ul.more-list
--#         .li
--#           = link_to '削除', item_path(params[:id]), method: :delete
--#     .post-text
--#       - if @item.text.present?
--#         %p.item__text
--#           = @item.text
-  -# .container
-  -#   - if current_user
-  -#     = form_for [@item, @comment] do |form|
-  -#       = form.text_area :text, class: 'container-text', placeholder: 'type a text'
-  -#       = form.submit "SEND", class: 'submit-btn'
-  -#   - else
-  -#     %strong
-  -#       %p
-  -#         ※※※ コメントの投稿には新規登
-  -#         録/ログインが必要です ※※※
-  -#   .comments
-  -#     .h4
-  -#       コメント一覧
-  -#     - if @comments
-  -#       - @comments.each do |comment|
-  -#         .all-items--contents
-  -#           .comment-text
-  -#             = comment.text
-
 %header
-  -if user_signed_in?
-    .user_nav-grid-6
-      = link_to "マイページ",user_path(current_user.id), method: :get,  class: "btn mypage" 
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn logout"
-      = link_to "投稿する", new_item_path, class: "btn post"
-      = link_to "トップページ", root_path, class: "btn post"
-  -else
-    .grid-6
-      = link_to "ログイン", new_user_session_path, class: "btn"
-      = link_to "新規登録", new_user_registration_path, class: "btn" 
-  .items-list
-    %h.items-tag
-      Pic LIST
-    .item-tag
-      = render partial: 'tags/tag', collection: @tags 
-.wrapper
-  .contents-row
-    .title= "<タイトル>: #{@item.title}"
-    .content
-      -if @item.image.present?
-        .post-image{:style => "background-image: url(#{@item.image}"}  
-      -# = image_tag @item.image.to_s, class: 'image-post', size: "300x200" if @item.image.present?
-      .text
-        - if @item.text.present?
-          %p.post-text
-            = @item.text
-    .username= link_to "投稿者: #{@item.user.username}", user_path(@item.user), class: 'show-user'
-    -# .username= link_to "投稿者: #{@item.user.username}", user_path(@item), class: 'show-user'
-    .date= @item.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  .comments-container
-    %ul.comment-form--menu
-      %li.comment-form--menu-list <コメント投稿フォーム>
-      - if current_user
-        = form_for [@item, @comment] do |form|
-          %ul.form-menu
-            %li.form-list
-              = form.text_area :text, class: 'container-text', placeholder: 'type a text'
-            %li.form-list
-              = form.submit "SEND", class: 'submit-btn'
-      - else
-        %strong
-          %p
-            ※※※ コメントの投稿には新規登
-            録/ログインが必要です ※※※
-      .comments-form
-        %li.comments-all 
-          <コメント一覧>
-        - if @comments
-          .comment-menu
-            - @comments.each do |comment|
-              %p.user="<#{comment.user.username}>: #{comment.text}"
-              %p.date= comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
-             
+  = render partial: 'top_page_header'
+.container
+  = render partial: 'comment_to_item'
+  = render partial: 'comment_form'
+-# %header
+-#   -if user_signed_in?
+-#     .user_nav-grid-6
+-#       = link_to "マイページ",user_path(current_user.id), method: :get,  class: "btn mypage" 
+-#       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "btn logout"
+-#       = link_to "投稿する", new_item_path, class: "btn post"
+-#       = link_to "トップページ", root_path, class: "btn post"
+-#   -else
+-#     .grid-6
+-#       = link_to "ログイン", new_user_session_path, class: "btn"
+-#       = link_to "新規登録", new_user_registration_path, class: "btn" 
+-#   .items-list
+-#     %h.items-tag
+-#       Pic LIST
+-#     .item-tag
+-#       = render partial: 'tags/tag', collection: @tags 
+-# .wrapper
+-#   .contents-row
+-#     .title= "<タイトル>: #{@item.title}"
+-#     .content
+-#       -if @item.image.present?
+-#         .post-image{:style => "background-image: url(#{@item.image}"}  
+-#       .text
+-#         - if @item.text.present?
+-#           %p.post-text
+-#             = @item.text
+-#     .username= link_to "投稿者: #{@item.user.username}", user_path(@item.user), class: 'show-user'
+-#     .date= @item.created_at.strftime("%Y年%m月%d日 %H時%M分")
 
-
-          -# %ul.comment-menu
-          -#   - @comments.each do |comment|
-          -#     %li.comment-lsit
-          -#       %p.comment-user
-          -#         = "<#{comment.user.username}>: #{comment.text}"
-          -#       %p.comment-date
-          -#         = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  -# .comments-container
+  -#   %ul.comment-form--menu
+  -#     %li.comment-form--menu-list <コメント投稿フォーム>
+  -#     - if current_user
+  -#       = form_for [@item, @comment] do |form|
+  -#         %ul.form-menu
+  -#           %li.form-list
+  -#             = form.text_area :text, class: 'container-text', placeholder: 'type a text'
+  -#           %li.form-list
+  -#             = form.submit "SEND", class: 'submit-btn'
+  -#     - else
+  -#       %strong
+  -#         %p
+  -#           ※※※ コメントの投稿には新規登
+  -#           録/ログインが必要です ※※※
+  -#     .comments-form
+  -#       %li.comments-all 
+  -#         <コメント一覧>
+  -#       - if @comments
+  -#         .comment-menu
+  -#           - @comments.each do |comment|
+  -#             %p.user="<#{comment.user.username}>: #{comment.text}"
+  -#             %p.date= comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  -#         -# %ul.comment-menu
+  -#         -#   - @comments.each do |comment|
+  -#         -#     %li.comment-lsit
+  -#         -#       %p.comment-user
+  -#         -#         = "<#{comment.user.username}>: #{comment.text}"
+  -#         -#       %p.comment-date
+  -#         -#         = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")

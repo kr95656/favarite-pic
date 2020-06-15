@@ -1,0 +1,27 @@
+.comments-container
+  %ul.comment-form--menu
+    %li.comment-form--menu-list CommentForm
+    - if current_user
+      = form_for [@item, @comment] do |form|
+        %ul.form-menu
+          %li.form-list
+            = form.text_area :text, class: 'container-text', placeholder: 'type a text'
+          %li.form-list
+            = form.submit "SEND", class: 'submit-btn'
+    - else
+      %strong
+        %p
+          ※※※ コメントの投稿には新規登
+          録/ログインが必要です ※※※
+    .comments-form
+      %li.comments-all 
+        Comment Lists
+      - if @comments
+        .comment-menu
+          - @comments.each do |comment|
+            %p.user
+              %span.user__name
+                ="#{comment.user.username}:"
+              %span.user__post-text
+                = comment.text
+            %p.date= comment.created_at.strftime("%Y年%m月%d日 %H時%M分")

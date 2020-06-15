@@ -1,0 +1,297 @@
+//test コード
+$breakpoints: (
+  // 'sm': 340,
+  'sm': 320,
+  'md': 767,
+  'lg': 1023,
+  'xl': 1200,
+) !default;
+
+@mixin mq($mq, $bp1: md, $bp2: lg) {
+ 
+  $w1    : map-get($breakpoints, $bp1);
+  $w2    : map-get($breakpoints, $bp2);
+  $min1  : 'min-width: #{convert-em($w1, 1)}';
+  $min2  : 'min-width: #{convert-em($w1, 1)}';
+  $max1  : 'max-width: #{convert-em($w1)}';
+  $max2  : 'max-width: #{convert-em($w2)}';
+ 
+  @if $mq == min {
+    @media screen and ($min1) {
+      @content;
+    }
+  }
+  @else if $mq == max {
+    @media screen and ($max1) {
+      @content;
+    }
+  }
+  @else if $mq == min-max {
+    @media screen and ($min2) and ($max2) {
+      @content;
+    }
+  }
+}
+ 
+@function convert-em($width, $ge: 0) {
+  @return '#{($width + $ge) / 16}em';
+}
+
+
+
+.comments-container {
+  overflow: scroll;
+  background: rgb(241, 241, 224);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 30px;
+
+  @include mq('max', 'md') {
+    .comment-form--menu {
+      width: 80%;
+      &-list {
+        font-size: 16px;
+        letter-spacing: 2px;
+        text-align: center;
+        margin-bottom: 10px
+      }
+      .new_comment {
+        margin-bottom: 10px;
+        .form-menu {
+          text-align: left;
+          .form-list {
+            .container-text {
+              width: 100%;
+              height: 60px;
+            }
+            .submit-btn {
+              width: 100%;
+              display       : inline-block;
+              border-radius : 5%;          /* 角丸       */
+              font-size     : 10pt;        /* 文字サイズ */
+              text-align    : center;      /* 文字位置   */
+              cursor        : pointer;     /* カーソル   */
+              padding       : 10px;   /* 余白       */
+              background    : #52dddd;     /* 背景色     */
+              color         : #ffffff;     /* 文字色     */
+              line-height   : 1em;         /* 1行の高さ  */
+              transition    : .3s;         /* なめらか変化 */
+              box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+              border        : 2px solid #003e49;    /* 枠の指定 */
+              opacity: 0.2;
+              // padding: 10px;
+              // display: inline-block;
+            }
+            .submit-btn:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .comments-form {
+        width: 100%;
+        background: red($color: #000000);
+        .comments-all {
+          font-size: 16px;
+          letter-spacing: 4px;
+          text-align: center;
+        }
+        .comment-menu {
+          overflow: auto;
+          height: 300px;
+          width: 100%;
+          .user {
+            margin: 0 0 10px 0;
+            &__name {
+              font-size: 10px;
+              margin: 0 5px 0 0;
+            }
+            &__post-text {
+              font-size: 12px;
+            }
+          }
+          .date {
+            font-size: 8px;
+            text-align: right;
+            margin: 0 0 15px 0;
+          }
+          
+        }
+      }
+    }
+  }
+  @include mq('min-max', 'md', 'lg') {
+    .comment-form--menu {
+      width: 80%;
+      &-list {
+        font-size: 22px;
+        letter-spacing: 2px;
+        text-align: center;
+        margin-bottom: 10px
+      }
+      .new_comment {
+        margin-bottom: 10px;
+        .form-menu {
+          text-align: left;
+          .form-list {
+            .container-text {
+              width: 100%;
+              height: 60px;
+            }
+            .submit-btn {
+              width: 100%;
+              display       : inline-block;
+              border-radius : 5%;          /* 角丸       */
+              font-size     : 12pt;        /* 文字サイズ */
+              text-align    : center;      /* 文字位置   */
+              cursor        : pointer;     /* カーソル   */
+              padding       : 10px;   /* 余白       */
+              background    : #52dddd;     /* 背景色     */
+              color         : #ffffff;     /* 文字色     */
+              line-height   : 1em;         /* 1行の高さ  */
+              transition    : .3s;         /* なめらか変化 */
+              box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+              border        : 2px solid #003e49;    /* 枠の指定 */
+              opacity: 0.2;
+              // padding: 10px;
+              // display: inline-block;
+            }
+            .submit-btn:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .comments-form {
+        width: 100%;
+        background: red($color: #000000);
+        .comments-all {
+          font-size: 22px;
+          letter-spacing: 4px;
+          text-align: center;
+        }
+        .comment-menu {
+          overflow: auto;
+          height: 300px;
+          width: 100%;
+          .user {
+            margin: 0 0 10px 0;
+            &__name {
+              font-size: 13.75px;
+              margin: 0 5px 0 0;
+            }
+            &__post-text {
+              font-size: 16.5px;
+            }
+          }
+          .date {
+            font-size: 11px;
+            text-align: right;
+            margin: 0 0 25px 0;
+          }
+          
+        }
+      }
+    }
+  }
+  @include mq('min', 'lg') {
+    .comment-form--menu {
+      width: 80%;
+      &-list {
+        font-size: 30.25px;
+        letter-spacing: 2px;
+        text-align: center;
+        margin-bottom: 10px
+      }
+      .new_comment {
+        margin-bottom: 10px;
+        .form-menu {
+          text-align: left;
+          .form-list {
+            .container-text {
+              width: 100%;
+              height: 60px;
+            }
+            .submit-btn {
+              width: 100%;
+              display       : inline-block;
+              border-radius : 5%;          /* 角丸       */
+              font-size     : 12pt;        /* 文字サイズ */
+              text-align    : center;      /* 文字位置   */
+              cursor        : pointer;     /* カーソル   */
+              padding       : 10px;   /* 余白       */
+              background    : #52dddd;     /* 背景色     */
+              color         : #ffffff;     /* 文字色     */
+              line-height   : 1em;         /* 1行の高さ  */
+              transition    : .3s;         /* なめらか変化 */
+              box-shadow    : 6px 6px 3px #666666;  /* 影の設定 */
+              border        : 2px solid #003e49;    /* 枠の指定 */
+              opacity: 0.2;
+              // padding: 10px;
+              // display: inline-block;
+            }
+            .submit-btn:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      .comments-form {
+        width: 100%;
+        background: red($color: #000000);
+        .comments-all {
+          font-size: 30.25px;
+          letter-spacing: 4px;
+          text-align: center;
+        }
+        .comment-menu {
+          overflow: auto;
+          height: 300px;
+          width: 100%;
+          .user {
+            margin: 0 0 10px 0;
+            &__name {
+              font-size: 18.90625px;
+              margin: 0 10px 0 0;
+            }
+            &__post-text {
+              font-size: 22.6875px;
+            }
+          }
+          .date {
+            font-size: 15.125px;
+            margin: 0 0 30px 0;
+            text-align: right;
+          }
+          
+        }
+      }
+    }
+  }
+
+}
+  
+  
+  // .comments-form {
+  //   width: 100%;
+  //   background: red($color: #000000);
+  //   .comments-all {
+  //     font-size: 20px;
+  //     letter-spacing: 4px;
+  //   }
+  //   .comment-menu {
+  //     overflow: auto;
+  //     height: 300px;
+  //     width: 100%;
+  //     .comment-list {
+  //       .user {
+  //         text-align: right;
+  //       }
+  //       .date {
+  //        font-size: 10px;
+  //       }
+  //     }
+  //   }
+  // }

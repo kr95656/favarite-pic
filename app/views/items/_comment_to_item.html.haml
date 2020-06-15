@@ -1,0 +1,10 @@
+.show-item
+  .item-nav
+    .item-title= "title: #{@item.title}"
+    .post-image{:style => "background-image: url(#{@item.image}"}  
+    .post-text
+      - if @item.text.present?
+        %p.post-text__contents
+          = @item.text
+    .poster-name= link_to "poster: #{@item.user.username}", user_path(@item.user), class: 'show-user'
+    .post-date= @item.created_at.strftime("%Y年%m月%d日 %H時%M分")
