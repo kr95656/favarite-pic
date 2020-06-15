@@ -1,47 +1,186 @@
+//test コード
+$breakpoints: (
+  // 'sm': 340,
+  'sm': 320,
+  'md': 767,
+  'lg': 1023,
+  'xl': 1200,
+) !default;
+
+@mixin mq($mq, $bp1: md, $bp2: lg) {
+ 
+  $w1    : map-get($breakpoints, $bp1);
+  $w2    : map-get($breakpoints, $bp2);
+  $min1  : 'min-width: #{convert-em($w1, 1)}';
+  $min2  : 'min-width: #{convert-em($w1, 1)}';
+  $max1  : 'max-width: #{convert-em($w1)}';
+  $max2  : 'max-width: #{convert-em($w2)}';
+ 
+  @if $mq == min {
+    @media screen and ($min1) {
+      @content;
+    }
+  }
+  @else if $mq == max {
+    @media screen and ($max1) {
+      @content;
+    }
+  }
+  @else if $mq == min-max {
+    @media screen and ($min2) and ($max2) {
+      @content;
+    }
+  }
+}
+ 
+@function convert-em($width, $ge: 0) {
+  @return '#{($width + $ge) / 16}em';
+}
+
+
+
+
 .container {
   // width: 100%;
   // height: 100%;
-  margin: 20px 0 0 ;
-  .show-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .item-nav {
-      .item-title {
-        margin: 0 0 10px 0;
-        font-size: 16px;
-      }
-      .post-image {
-        height: 270px;
-        width: 270px;
-        background-size: cover;
-        margin: 0 0 10px 0;
-      }
-      .post-text {
-        margin: 0 0 10px 0;
-        .post-text__contents {
-          font-size: 16px;
+  padding: 20px 0 0 ;
+  background-color: #f0f0f0;
 
+  @include mq('max', 'md') {
+    .show-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .item-nav {
+        .item-title {
+          margin: 0 0 10px 0;
+          font-size: 16px;
         }
-      }
-      .poster-name {
-        margin: 0 0 10px 0;
-        font-size: 16px;
-        .show-user {
-          text-decoration: none;
-          color: black;
-          opacity: 0.3;
+        .post-image {
+          height: 270px;
+          width: 270px;
+          background-size: cover;
+          margin: 0 0 10px 0;
         }
-        .show-user:hover {
-          opacity: 1;
-          transition: 0.3s;
+        .post-text {
+          margin: 0 0 10px 0;
+          .post-text__contents {
+            font-size: 16px;
+  
+          }
         }
-      }
-      .post-date {
-        text-align: right;
-        font-size: 10px;
+        .poster-name {
+          margin: 0 0 10px 0;
+          font-size: 16px;
+          .show-user {
+            text-decoration: none;
+            color: black;
+            opacity: 0.3;
+          }
+          .show-user:hover {
+            opacity: 1;
+            transition: 0.3s;
+          }
+        }
+        .post-date {
+          text-align: right;
+          font-size: 10px;
+        }
       }
     }
   }
+
+  @include mq('min-max', 'md', 'lg') {
+    .show-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .item-nav {
+        .item-title {
+          margin: 0 0 10px 0;
+          font-size: 22px;
+        }
+        .post-image {
+          // width: 100%;
+          // height: 100%;
+          min-height: 500px;
+          min-width: 500px;
+          background-size: cover;
+          margin: 0 0 10px 0;
+        }
+        .post-text {
+          margin: 0 0 10px 0;
+          .post-text__contents {
+            font-size: 22px;
+  
+          }
+        }
+        .poster-name {
+          margin: 0 0 10px 0;
+          font-size: 22px;
+          .show-user {
+            text-decoration: none;
+            color: black;
+            opacity: 0.3;
+          }
+          .show-user:hover {
+            opacity: 1;
+            transition: 0.3s;
+          }
+        }
+        .post-date {
+          text-align: right;
+          font-size: 13.75px;
+        }
+      }
+    }
+  }
+  @include mq('min', 'lg') {
+    .show-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .item-nav {
+        .item-title {
+          margin: 0 0 10px 0;
+          font-size: 30.25px;
+        }
+        .post-image {
+          // width: 100%;
+          // height: 100%;
+          min-height: 700px;
+          min-width: 700px;
+          background-size: cover;
+          margin: 0 0 10px 0;
+        }
+        .post-text {
+          margin: 0 0 10px 0;
+          .post-text__contents {
+            font-size: 30.25px;
+  
+          }
+        }
+        .poster-name {
+          margin: 0 0 10px 0;
+          font-size: 30.25px;
+          .show-user {
+            text-decoration: none;
+            color: black;
+            opacity: 0.3;
+          }
+          .show-user:hover {
+            opacity: 1;
+            transition: 0.3s;
+          }
+        }
+        .post-date {
+          text-align: right;
+          font-size: 18.90625px;
+        }
+      }
+    }
+  }
+
+
 
 }
