@@ -1,7 +1,8 @@
 %header
   = render partial: 'top_page_header'
 .container
-  = render partial: 'comment_page'
+  = render partial: 'comment_to_item'
+  = render partial: 'comment_form'
 -# %header
 -#   -if user_signed_in?
 -#     .user_nav-grid-6
@@ -54,10 +55,10 @@
   -#           - @comments.each do |comment|
   -#             %p.user="<#{comment.user.username}>: #{comment.text}"
   -#             %p.date= comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
--#           -# %ul.comment-menu
--#           -#   - @comments.each do |comment|
--#           -#     %li.comment-lsit
--#           -#       %p.comment-user
--#           -#         = "<#{comment.user.username}>: #{comment.text}"
--#           -#       %p.comment-date
--#           -#         = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  -#         -# %ul.comment-menu
+  -#         -#   - @comments.each do |comment|
+  -#         -#     %li.comment-lsit
+  -#         -#       %p.comment-user
+  -#         -#         = "<#{comment.user.username}>: #{comment.text}"
+  -#         -#       %p.comment-date
+  -#         -#         = comment.created_at.strftime("%Y年%m月%d日 %H時%M分")
