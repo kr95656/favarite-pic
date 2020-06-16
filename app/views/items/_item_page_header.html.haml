@@ -9,6 +9,8 @@
         .user_nav-grid-6
           %ul.gbluv-block__top-menu
             %li.page-lsit
+              = link_to "top", root_path, class: "page-btn"
+            %li.page-lsit
               = link_to "mypage",user_path(current_user.id), method: :get,  class: "page-btn" 
             %li.page-lsit
               = link_to "logout", destroy_user_session_path, method: :delete, class: "page-btn"
