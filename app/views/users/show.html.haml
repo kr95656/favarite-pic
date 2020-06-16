@@ -1,6 +1,11 @@
 %header
   = render partial: 'user_page_header'
-
+.wrapper
+  .all-items
+    .user-name-page
+      = "#{@name}  page"
+    = render partial: 'items/items_content'
+    %footer= paginate @items
 
 
 
@@ -30,8 +35,8 @@
 -#     -#     = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" 
 -#     -#     = form.submit "検索", class: "search-btn"
 -#     .mypage
--#       = "#{@name}さんのページ"
--#       -# マイページ
+      -# = "#{@name}さんのページ"
+      -# -# マイページ
 -#     .items-contents
 -#       - @items.each do |item|
 -#         .contents-row{data: {item: {id: item.id}}}

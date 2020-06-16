@@ -1,0 +1,65 @@
+//test コード
+$breakpoints: (
+  // 'sm': 340,
+  'sm': 320,
+  'md': 767,
+  'lg': 1023,
+  'xl': 1200,
+) !default;
+
+@mixin mq($mq, $bp1: md, $bp2: lg) {
+ 
+  $w1    : map-get($breakpoints, $bp1);
+  $w2    : map-get($breakpoints, $bp2);
+  $min1  : 'min-width: #{convert-em($w1, 1)}';
+  $min2  : 'min-width: #{convert-em($w1, 1)}';
+  $max1  : 'max-width: #{convert-em($w1)}';
+  $max2  : 'max-width: #{convert-em($w2)}';
+ 
+  @if $mq == min {
+    @media screen and ($min1) {
+      @content;
+    }
+  }
+  @else if $mq == max {
+    @media screen and ($max1) {
+      @content;
+    }
+  }
+  @else if $mq == min-max {
+    @media screen and ($min2) and ($max2) {
+      @content;
+    }
+  }
+}
+ 
+@function convert-em($width, $ge: 0) {
+  @return '#{($width + $ge) / 16}em';
+}
+
+
+.user-name-page {
+  text-align: center;
+}
+
+@include mq('max', 'md') {
+  .user-name-page {
+    margin: 0 0 16px 0;
+    font-size: 30px;
+  }
+}
+
+@include mq('min-max', 'md', 'lg') {
+  .user-name-page {
+    margin: 0 0 26px 0;
+    font-size: 45px;
+
+  }
+}
+
+@include mq('min', 'lg') {
+  .user-name-page {
+    margin: 0 0 30px 0;
+    font-size: 50px;
+  }
+}

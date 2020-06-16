@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @tags = Tag.all
     user = User.find(params[:id])
     @name = user.username
-    @items = user.items.page(params[:page]).per(10).order(created_at: :desc)
+    @items = user.items.page(params[:page]).per(21).order(created_at: :desc)
     # @tags = Tag.all
     # @name = current_user.username
     # @items = current_user.items.page(params[:page]).per(10).order(created_at: :desc)

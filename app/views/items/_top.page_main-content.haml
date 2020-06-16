@@ -1,24 +1,6 @@
 .all-items
-  .search-box
-    = form_with url: search_items_path, local: true,method: :get, class: 'search-form' do |form|
-      = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" 
-      = form.submit "search", class: "search-btn"
-  .items-contents
-    - @items.each do |item|
-      .item-row
-        .contents-row{:style => "background-image: url(#{item.image}"} 
-        %ul.item-nav
-          %ul.item-nav__show-page
-            %li.item-nav__show-page__comment
-              = link_to 'comment', item_path(item.id), class: 'link-btn', method: :get
-            %li.item-nav__show-page__user
-              = link_to "poster: #{item.user.username}", user_path(item.user.id), class: 'link-btn'
-          -if user_signed_in? && current_user.id == item.user_id
-            %ul.item-nav__current-user
-              %li.item-nav__current-user__edit
-                = link_to 'edit', edit_item_path(item), class: 'link-btn', method: :get 
-              %li.item-nav__current-user__delete
-                = link_to 'delete', item_path(item), class: 'link-btn', method: :delete
+  = render partial: 'search_box'
+  = render partial: 'items_content'
   %footer= paginate @items
  
    
