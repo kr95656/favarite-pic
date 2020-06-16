@@ -2,16 +2,17 @@ $(function(){
   function buildHTML(comment){
     var html = `
       <p class="user">
-        &lt;${comment.user_name}&gt;: ${comment.text}
+        <span class="user__name">
+          ${comment.user_name}:
+        </span>
+        <span class="user__post-text">
+          ${comment.text}
+        </span>
       </p>
       <p class="date">
         ${comment.created_at}
       </p>
       `
-
-    // var html = `<li class="comment-lsit">
-    //               <${comment.user_name}>: ${comment.text}
-    //             </li>`
     return html;
   }
 
