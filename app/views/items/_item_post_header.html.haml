@@ -1,0 +1,49 @@
+%ul.header__tabs-menu
+  %li.header__tabs-menu__top-list
+    .header__tabs-menu__top-list__gbluv_box
+      = link_to "#", class: "top-trigger" do
+        %i.fas.fa-bars
+        Top
+    .header__tabs-menu__top-list__gbluv-block
+      -if user_signed_in?
+        .user_nav-grid-6
+          %ul.gbluv-block__top-menu 
+            %li.page-lsit
+              = link_to "top",root_path, class: "page-btn" 
+            %li.page-lsit
+              = link_to "logout", destroy_user_session_path, method: :delete, class: "page-btn"
+            %li.page-lsit
+              = link_to "mypage",user_path(current_user.id), method: :get,  class: "page-btn" 
+      -else
+        .grid-6
+          %ul.gbluv-block__top-menu
+            %li.page-lsit
+              = link_to "ログイン", new_user_session_path, class: "page-btn"
+            %li.page-lsit
+              = link_to "新規登録", new_user_registration_path, class: "page-btn" 
+  %li.header__tabs-menu__pic-list
+    .header__tabs-menu__pic-list__gbluv_box
+      = link_to "#", class: "menu-trigger" do
+        Pic List
+        %i.fas.fa-bars
+    .header__tabs-menu__pic-list__gbluv_block
+      %ul.gblnv_block__pic-menu
+        = render partial: 'tags/tag', collection: @tags 
+
+%ul.slider
+  %li.slide-item
+    = image_tag "bence-balla-schottner-Rm7Qbb1FyQM-unsplash.jpg", class: "header-image"
+  %li.slide-item
+    = image_tag "dom-hill-nimElTcTNyY-unsplash.jpg", class: "header-image"
+  %li.slide-item
+    = image_tag "md-salman-tWOz2_EK5EQ-unsplash.jpg", class: "header-image"
+  %li.slide-item
+    = image_tag "jason-leung-JwnaKcENiGc-unsplash.jpg", class: "header-image"
+  %li.slide-item
+    = image_tag "logan-weaver-jM_xJyX-sPI-unsplash.jpg", class: "header-image"
+  %li.slide-item
+    = image_tag "revolt-164_6wVEHfI-unsplash.jpg", class: "header-image"
+  %li.slide-item
+    = image_tag "tobias-tullius-Fg15LdqpWrs-unsplash.jpg", class: "header-image"
+  %li.slide-item
+    = image_tag "verity-sanders-q4ExhrHaSLY-unsplash.jpg", class: "header-image"
