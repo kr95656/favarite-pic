@@ -37,8 +37,50 @@ $breakpoints: (
   @return '#{($width + $ge) / 16}em';
 }
 
+@keyframes colour{
+  0%{
+    background:#f0e2c6
+  }
+
+  40%{
+    background:#ebcda1
+  }
+
+  80%{
+    background:#d6cec6
+  }
+
+  100%{
+    background: rgb(228, 223, 223);
+  }
+
+}
+
+@keyframes colour{
+  0%{
+      background:#f3e7cd
+  }
+
+  40%{
+      background:#ebcda1
+  }
+
+  80%{
+      background:#d6cec6
+  }
+
+  100%{
+      background: rgb(228, 223, 223);
+  }
+
+}
 
 
+.wrapper {
+  background:#e7e3d7;
+  animation:colour 10s linear infinite;
+  animation:colour 10s linear infinite;
+}
 
 .container {
   padding: 20px 0 0 ;
