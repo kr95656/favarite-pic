@@ -119,7 +119,6 @@ $breakpoints: (
     }
     @include mq('max', 'md') {   //max-width: ~767px
       .items-contents {
-        
         .item-row {
           margin: 1em auto;
           margin: 0 auto;
