@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
- 
+
+  before_action :move_to_index, except: [:index, :show, :search]
+
   def index
     @items =  Item.all.includes(:user).order(created_at: :desc).page(params[:page]).per(21)
     @tags = Tag.all
@@ -76,6 +78,10 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:title, :image, :text, {tag_ids: []}).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
   # def item_params
   #   params.require(:item).permit(:title, :image, :text, tag_ids: []).merge(user_id: current_user.id)

@@ -1,32 +1,4 @@
-.search-box
-  = form_with url: search_items_path, local: true,method: :get, class: 'search-form' do |form|
-    = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" 
-    = form.submit "検索", class: "search-btn"
-.contents-row
-  - @items.each do |item|
-    .all-items--contents
-      .post-title-date
-        .post-title
-          = item.title
-        .post-date
-          = item.created_at.strftime("%Y年%m月%d日 %H時%M分")
-      .post-contents
-        .post-username
-          = link_to "投稿者 #{item.user.username}", user_path(item)
-        .post-image
-          = image_tag item.image.to_s, size: "200x200", class: 'post-contents__image' if item.image.present?
-          .more
-            .span
-              = image_tag 'arrow_top.png'
-          %ul.more-list
-            .li
-              = link_to 'コメントする', item_path(item), method: :get
-            - if user_signed_in? && current_user.id == item.user_id
-              -# .li
-              -#   = link_to '編集', edit_item_path(item), method: :get 
-              .li
-                = link_to '削除', item_path(item), method: :delete
-        .post-text
-          - if item.text.present?
-            %p.item__text
-              = item.text
+%header
+  = render partial: 'item_page_header'
+.wrapper
+  = render partial: 'top.page_main-content'
