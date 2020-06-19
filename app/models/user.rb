@@ -7,4 +7,14 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   
   validates :username, presence: true, uniqueness: true
+
+  def self.guest
+    find_or_create_by(email: 'test@com') do |user|
+      user.password = ENV["TEST_PASSWORD"]
+      # user.password = Rails.application.secrets.test_account_pass
+    end
+  end
+    
+
+
 end
