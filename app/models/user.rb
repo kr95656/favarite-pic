@@ -9,7 +9,7 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
 
   def self.guest
-    find_or_create_by(email: 'test@com') do |user|
+    find_or_create_by(email: 'guest@example.com') do |user|
       user.password = ENV["TEST_PASSWORD"]
       # user.password = Rails.application.secrets.test_account_pass
     end
