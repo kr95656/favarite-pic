@@ -43,9 +43,18 @@
     .btn {
       margin-top: 20px;
       color: #fff;
-      background-color: #ccc;
+      // background-color: #ccc;
+      background-color: #38aef0;
       font-size: 14px;
+      opacity: 0.4;
+      text-decoration: none;
     }
+    .btn:hover {
+      opacity: 1;
+      transition: 0.2s;
+      cursor: pointer;
+    }
+   
   }
 
   .field {
@@ -71,6 +80,22 @@
     }
   }
 
+  .test-btn {
+    margin-top: 20px;
+    color: #fff;
+    background-color: #38aef0;
+    font-size: 14px;
+    text-decoration: none;
+    display: inline-block;
+    height: 50px;
+    padding: 0 30px;
+    line-height: 50px;
+    letter-spacing: 1px;
+    text-align: center;
+    border: none;
+    border-radius: 2px;
+  }
+
   .btn {
     display: inline-block;
     height: 50px;
@@ -80,6 +105,12 @@
     text-align: center;
     border: none;
     border-radius: 2px;
+    opacity: 0.4;
+  }
+  .btn:hover {
+    opacity: 1;
+    transition: 0.2s;
+    cursor: pointer;
   }
 
   input[type='submit'] {
