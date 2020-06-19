@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
   before_action :move_to_index, except: [:index, :show, :search]
+  # before_action :authenticate_user! , only: [:new]
 
   def index
     @items =  Item.all.includes(:user).order(created_at: :desc).page(params[:page]).per(21)

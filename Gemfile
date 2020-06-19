@@ -64,4 +64,5 @@ gem 'pry-rails'
 gem 'kaminari'
 
 gem 'rails_12factor', group: :production
+gem 'dotenv-rails'
 
