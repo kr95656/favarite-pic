@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
     
     if @item.save 
       flash[:notice] = '投稿が完了しました。'
-      redirect_to action: "index", notice: '投稿が完了しました。'
+      redirect_to action: "index"
       #  render :index
       # render :index
     else #作れてなかったら
@@ -65,6 +65,9 @@ class ItemsController < ApplicationController
   def update
     item = Item.find(params[:id])
     item.update(item_params)
+    flash[:notice] = '投稿内容を編集しました。'
+    redirect_to action: 'index'
+    # redirect_to action: "index", notice: '投稿が完了しました。' 
   end
 
   def search
