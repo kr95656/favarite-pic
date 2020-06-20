@@ -1,3 +1,30 @@
+%header
+  = render partial: 'item_post_header'
+.wrapper
+  .contents_row
+    .row_container
+      = form_for @item do |form|
+        = render partial: 'layouts/error_message', local: { item: @item}
+        %ul
+          %li.post-form
+            PostForm
+          %li.post-title
+            = form.text_field :title, class: 'container__title', placeholder: 'type a title'
+          %li.post-image
+            = form.text_field :image, class: 'container__image', placeholder: "type a image url"
+          %li.post-text
+            = form.text_field :text, class: 'container__text', placeholder: 'please a word'
+          %li.post-tag
+            %ul.tag-list
+              -# = form.collection_check_boxes :tag_ids, Tag.all, :id, :name, include_hidden: false do |tag| 
+              -#   %li= tag.label {tag.check_box + tag.text}
+              -# = form.collection_check_boxes :tag_ids, Tag.all, :id, :name do |tag| 
+              = form.collection_check_boxes :tag_ids, Tag.all, :id, :name  do |tag| 
+                %li.tag= tag.label {tag.check_box + tag.text }
+          %li.post-send  
+            = form.submit "SEND", class: 'btn'
+
+
 -# .contents-row
 -#   .container
 -#     -# = form_with model: @item do |f|
