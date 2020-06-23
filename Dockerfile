@@ -18,4 +18,5 @@ ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
 
 #Gemfileのbundle installを実行
 RUN bundle install
+# RUN gem install bundler && bundle install 
 ADD . $APP_ROOT

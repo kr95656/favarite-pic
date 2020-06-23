@@ -12,10 +12,12 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+  # pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # socket: /tmp/mysql.sock
+  username: root #docker-compose.ymlのMYSQL_DATABASE
+  password: password #docker-compose.ymlのMYSQL_ROOT_PASSWORD
+  host: db #docker-compose.ymlのservice名
 
 development:
   <<: *default
