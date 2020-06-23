@@ -45,9 +45,9 @@ jobs:
 
     # run tests!
     - run:
-      name: Rubocop
-      command: bundle exec rubocop
-      
+        name: Rubocop
+        command: bundle exec rubocop
+
     - run:
         name: Run rspec
         command: |
