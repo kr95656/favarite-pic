@@ -28,3 +28,11 @@ Metrics/LineLength:
 #'frozen_string_literal: true'を無効
 Style/FrozenStringLiteralComment:
   Enabled: false
+
+# Use only ascii symbols in comments.
+AsciiComments:
+  Enabled: false
+
+# Use nested module/class definitions instead of compact style.を無効
+Style/ClassAndModuleChildren:
+  Enabled: false
