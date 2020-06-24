@@ -40,22 +40,22 @@ FASHION PIC POST
 
 ## DEMO
 
-- トップページheader部分
+- トップページheader部分  
 https://gyazo.com/25b72416a5bd4141f2bcf3b22d79a5df
 
-- トップページ投稿一覧
+- トップページ投稿一覧  
 https://gyazo.com/2c3768a25d43b1fd2011774871cedebe
 
-- コメント機能
+- コメント機能  
 https://gyazo.com/44bd283e1f6c7710511026a34f14333
 
-- インクリメンタルサーチ機能
+- インクリメンタルサーチ機能  
 https://gyazo.com/2066310facef463a33ff8e9139f828e7
 
-- ユーザーの投稿した写真一覧ページ
+- ユーザーの投稿した写真一覧ページ  
 https://gyazo.com/d5a2131318b05c0730dbd0e1d1f19ca7
 
-- カテゴリー毎に投稿された写真一覧ページ
+- カテゴリー毎に投稿された写真一覧ページ  
 cap カテゴリー  
 https://gyazo.com/2b60cffb7843a9da69bda1a265a2f0b3  
 
