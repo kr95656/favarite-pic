@@ -59,8 +59,8 @@ https://gyazo.com/d5a2131318b05c0730dbd0e1d1f19ca7
 cap カテゴリー  
 https://gyazo.com/2b60cffb7843a9da69bda1a265a2f0b3  
 
-&nbsp;　…other カテゴリー  
-https://gyazo.com/193b892db2e4907edcc755407c8f9f3d
+&nbsp; &ensp; …other カテゴリー  
+&nbsp; &ensp; https://gyazo.com/193b892db2e4907edcc755407c8f9f3d
 
 
 ## 使用言語
@@ -118,10 +118,10 @@ MySQL2 -v 5.6
 
 #### Association
 
--has_many :item_tags, dependent: :destroy
--has_many :tags, through: :item_tags, dependent: :destroy
--has_many :comments, dependent: :destroy
--belongs_to :user
+-has_many :item_tags, dependent: :destroy  
+-has_many :tags, through: :item_tags, dependent: :destroy  
+-has_many :comments, dependent: :destroy  
+-belongs_to :user  
 
 
 ### commentsテーブル
@@ -134,8 +134,8 @@ MySQL2 -v 5.6
 
 #### Association
 
--belongs_to :user
--belongs_to :item
+-belongs_to :user  
+-belongs_to :item  
 
 
 ### item_tagsテーブル
@@ -147,8 +147,8 @@ MySQL2 -v 5.6
 
 #### Association
 
--belongs_to :item
--belongs_to :tag
+-belongs_to :item  
+-belongs_to :tag  
 
 
 ### tagsテーブル
@@ -159,8 +159,8 @@ MySQL2 -v 5.6
 
 #### Association
 
--has_many :item_tags, dependent: :destroy
--has_many :items, through: :item_tags, dependent: :destroy
+-has_many :item_tags, dependent: :destroy  
+-has_many :items, through: :item_tags, dependent: :destroy  
 
 
 ### usersテーブル
@@ -176,5 +176,5 @@ MySQL2 -v 5.6
 
 #### Association
 
--has_many :items, dependent: :destroy
--has_many :comments, dependent: :destroy
+-has_many :items, dependent: :destroy  
+-has_many :comments, dependent: :destroy  
