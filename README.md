@@ -23,7 +23,7 @@ FASHION PIC POST
 
 - デプロイ先 → heroku
 - アプリ url → https://sheltered-bayou-43086.herokuapp.com/
-- テストログイン（TEST Log in からログインできます）→ https://sheltered-bayou-43086.herokuapp.com/users/sign_in
+- テストログイン（TEST Log in からログインできます) → https://sheltered-bayou-43086.herokuapp.com/users/sign_in
 
 
 ## 制作背景
@@ -56,10 +56,10 @@ https://gyazo.com/2066310facef463a33ff8e9139f828e7
 https://gyazo.com/d5a2131318b05c0730dbd0e1d1f19ca7
 
 - カテゴリー毎に投稿された写真一覧ページ
-cap カテゴリー
-https://gyazo.com/2b60cffb7843a9da69bda1a265a2f0b3
+cap カテゴリー  
+https://gyazo.com/2b60cffb7843a9da69bda1a265a2f0b3  
 
-…other カテゴリー
+…other カテゴリー  
 https://gyazo.com/193b892db2e4907edcc755407c8f9f3d
 
 
