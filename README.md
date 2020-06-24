@@ -59,8 +59,8 @@ https://gyazo.com/d5a2131318b05c0730dbd0e1d1f19ca7
 cap カテゴリー  
 https://gyazo.com/2b60cffb7843a9da69bda1a265a2f0b3  
 
-&nbsp; &ensp; 　…other カテゴリー  
-&nbsp; &ensp; 　https://gyazo.com/193b892db2e4907edcc755407c8f9f3d
+&nbsp;  …other カテゴリー  
+&nbsp;  https://gyazo.com/193b892db2e4907edcc755407c8f9f3d
 
 
 ## 使用言語
