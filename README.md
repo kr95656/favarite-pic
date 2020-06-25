@@ -65,28 +65,28 @@ https://gyazo.com/2b60cffb7843a9da69bda1a265a2f0b3
 
 ## 使用言語
 
-バックエンド
-Ruby -v 2.5.1
-Ruby on Rails -v 5.2.3
+バックエンド  
+Ruby -v 2.5.1  
+Ruby on Rails -v 5.2.3  
 
-フロントエンド
-Haml
-scss
-JavaScript
-jQuery
+フロントエンド  
+Haml  
+scss  
+JavaScript  
+jQuery  
 
-データベース
-MySQL2 -v 5.6
+データベース  
+MySQL2 -v 5.6  
 
 
 ## 使用技術
 
-- CI/CDパイプラインの構築にcircleciを使用。
+- CI/CDパイプラインの構築にcircleciを使用。  
 →CI/CDの使用により、テストを自動化することで品質を高め、その後のデプロイ作業も自動化することで
 よりアジャイルな開発ができるようになる。
 この一連の流れを経験したくて、導入しました。
 
-- 開発環境、本番環境でDockerを使用。
+- 開発環境、本番環境でDockerを使用。  
 →以下のメリットがあり、dockerを扱う企業さんが多いことから自身でもdockerを導入してみました。  
 ・複数人で開発する際に、環境の統一化によりエラーを減少させる。  
 ・開発と同一の環境でテストできる。  
