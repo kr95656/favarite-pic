@@ -41,26 +41,26 @@ FASHION PIC POST
 ## DEMO
 
 - トップページheader部分  
-https://gyazo.com/25b72416a5bd4141f2bcf3b22d79a5df
-
+![image](https://user-images.githubusercontent.com/64628395/85689490-a2ae2100-b70d-11ea-8999-92aca55dffbb.png)  
+  
 - トップページ投稿一覧  
-https://gyazo.com/2c3768a25d43b1fd2011774871cedebe
-
-- コメント機能  
-https://gyazo.com/44bd283e1f6c7710511026a34f14333
-
-- インクリメンタルサーチ機能  
-https://gyazo.com/2066310facef463a33ff8e9139f828e7
-
-- ユーザーの投稿した写真一覧ページ  
-https://gyazo.com/d5a2131318b05c0730dbd0e1d1f19ca7
-
+![image](https://user-images.githubusercontent.com/64628395/85689999-1819f180-b70e-11ea-9024-1df327268b37.png)  
+  
+- コメント機能    
+https://gyazo.com/44bd283e1f6c7710511026a34f14333  
+  
+- インクリメンタルサーチ機能   
+![demo](https://gyazo.com/2066310facef463a33ff8e9139f828e7/raw)  
+  
+- ユーザーの投稿した写真一覧ページ    
+![image](https://user-images.githubusercontent.com/64628395/85699039-266c0b80-b716-11ea-87f5-689216e37ce0.png)  
+   
 - カテゴリー毎に投稿された写真一覧ページ  
 cap カテゴリー  
-https://gyazo.com/2b60cffb7843a9da69bda1a265a2f0b3  
-
-&emsp; &nbsp; …other カテゴリー  
-&emsp; &nbsp; https://gyazo.com/193b892db2e4907edcc755407c8f9f3d
+![image](https://user-images.githubusercontent.com/64628395/85699342-66cb8980-b716-11ea-8466-46e232b039db.png)
+  
+&emsp; &nbsp; …other カテゴリー
+&emsp; &nbsp; ![image](https://user-images.githubusercontent.com/64628395/85699599-a1352680-b716-11ea-9335-c79fbf80f448.png)  
 
 
 ## 使用言語
