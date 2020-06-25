@@ -1,31 +1,31 @@
 # README
 
-## アプリ名
+## アプリ名  
 
 FASHION PIC POST
-
-
-## 概要
-
-- お気に入りのファッション写真を投稿し、他ユーザーは投稿写真にコメントできます。
-
-- タグ毎にファッション写真の閲覧ができます。
-
-- 写真を検索できます。
-
-
-## アプリの構成
-
-![](.drawio.svg)
-
-
-## 本番環境
-
-- デプロイ先 → heroku
-- アプリ url → https://sheltered-bayou-43086.herokuapp.com/
-- テストログイン（TEST Log in からログインできます) → https://sheltered-bayou-43086.herokuapp.com/users/sign_in
-
-
+  
+  
+## 概要  
+  
+- お気に入りのファッション写真を投稿し、他ユーザーは投稿写真にコメントできます。  
+  
+- タグ毎にファッション写真の閲覧ができます。  
+  
+- 写真を検索できます。  
+    
+    
+## アプリの構成    
+    
+![](.drawio.svg)  
+  
+  
+## 本番環境  
+  
+- デプロイ先 → heroku  
+- アプリ url → https://sheltered-bayou-43086.herokuapp.com/  
+- テストログイン（TEST Log in からログインできます) → https://sheltered-bayou-43086.herokuapp.com/users/sign_in  
+  
+  
 ## 制作背景
 
 スクールで学んだRailsの基礎知識の定着が浅いと感じて、
@@ -47,7 +47,7 @@ FASHION PIC POST
 ![image](https://user-images.githubusercontent.com/64628395/85689999-1819f180-b70e-11ea-9024-1df327268b37.png)  
   
 - コメント機能    
-https://gyazo.com/44bd283e1f6c7710511026a34f14333  
+![demo](https://gyazo.com/98032fe151d928e8b01107c6ccca586e/raw)  
   
 - インクリメンタルサーチ機能   
 ![demo](https://gyazo.com/2066310facef463a33ff8e9139f828e7/raw)  
@@ -83,8 +83,7 @@ MySQL2 -v 5.6
 
 - CI/CDパイプラインの構築にcircleciを使用。  
 →CI/CDの使用により、テストを自動化することで品質を高め、その後のデプロイ作業も自動化することで
-よりアジャイルな開発ができるようになる。
-この一連の流れを経験したくて、導入しました。
+よりアジャイルな開発ができるようになる。この一連の流れを経験したくて、導入しました。
 
 - 開発環境、本番環境でDockerを使用。  
 →以下のメリットがあり、dockerを扱う企業さんが多いことから自身でもdockerを導入してみました。  
