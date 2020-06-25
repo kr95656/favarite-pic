@@ -41,7 +41,7 @@ FASHION PIC POST
 ## DEMO
 
 - トップページheader部分  
-![](https://gyazo.com/25b72416a5bd4141f2bcf3b22d79a5df)
+https://gyazo.com/25b72416a5bd4141f2bcf3b22d79a5df
 
 - トップページ投稿一覧  
 https://gyazo.com/2c3768a25d43b1fd2011774871cedebe
