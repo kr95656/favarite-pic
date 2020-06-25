@@ -65,17 +65,17 @@ https://gyazo.com/2b60cffb7843a9da69bda1a265a2f0b3
 
 ## 使用言語
 
-バックエンド  
+- バックエンド  
 Ruby -v 2.5.1  
 Ruby on Rails -v 5.2.3  
 
-フロントエンド  
+- フロントエンド  
 Haml  
 scss  
 JavaScript  
 jQuery  
 
-データベース  
+- データベース  
 MySQL2 -v 5.6  
 
 
