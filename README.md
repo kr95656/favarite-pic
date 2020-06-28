@@ -47,7 +47,7 @@ FASHION PIC POST
 ![image](https://user-images.githubusercontent.com/64628395/85689999-1819f180-b70e-11ea-9024-1df327268b37.png)  
   
 - コメント機能    
-![demo](https://gyazo.com/4f9a6e156081104a3461b0f6f511633b/raw)  
+
   
 - インクリメンタルサーチ機能   
 ![demo](https://gyazo.com/e93447197e4692fe1e0f8c1174b344b6/raw)  
@@ -93,6 +93,7 @@ MySQL2 -v 5.6
   
 - viewへのレスポンシブ対応。  
 → 各デバイス(スマホ、タブレット、PC)のサイズ毎にレスポンジブを対応させました。  
+![demo](https://gyazo.com/c6abc42b80dfd7970fe0818cd53582f9/raw)  
 ・スマホサイズ（width 320px~767px）  
 ・タブレットサイズ（width 767px ~ 1023px）  
 ・PCサイズ（width 1023px ~ )  
