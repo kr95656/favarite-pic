@@ -50,7 +50,7 @@ FASHION PIC POST
 ![demo](https://gyazo.com/98032fe151d928e8b01107c6ccca586e/raw)  
   
 - インクリメンタルサーチ機能   
-![demo](https://gyazo.com/2066310facef463a33ff8e9139f828e7/raw)  
+![demo](https://gyazo.com/e93447197e4692fe1e0f8c1174b344b6/raw)  
   
 - ユーザーの投稿した写真一覧ページ    
 ![image](https://user-images.githubusercontent.com/64628395/85699039-266c0b80-b716-11ea-87f5-689216e37ce0.png)  
@@ -90,6 +90,13 @@ MySQL2 -v 5.6
 ・複数人で開発する際に、環境の統一化によりエラーを減少させる点。  
 ・開発と同一の環境でテストできる点。  
 ・開発に使用したコンテナをCIでテスト、デプロイできる点。  
+  
+- viewへのレスポンシブ対応。  
+→ 各デバイス(スマホ、タブレット、PC)のサイズ毎にレスポンジブを対応させました。  
+![demo](https://gyazo.com/5877c777634f8760f8ef86df80fba296/raw)  
+・スマホサイズ（width 320px~767px）  
+・タブレットサイズ（width 767px ~ 1023px）  
+・PCサイズ（width 1023px ~ )  
 
 
 ## 開発環境
