@@ -41,7 +41,7 @@ FASHION PIC POST
 ## DEMO
 
 - トップページheader部分  
-![image](https://user-images.githubusercontent.com/64628395/85689490-a2ae2100-b70d-11ea-8999-92aca55dffbb.png)  
+![image](https://user-images.githubusercontent.com/64628395/85689490-a2ae2100-b70d-11ea-8999-92aca55dffbb.png)
   
 - トップページ投稿一覧  
 ![image](https://user-images.githubusercontent.com/64628395/85689999-1819f180-b70e-11ea-9024-1df327268b37.png)  
