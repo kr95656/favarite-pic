@@ -93,7 +93,7 @@ MySQL2 -v 5.6
   
 - viewへのレスポンシブ対応。  
 → 各デバイス(スマホ、タブレット、PC)のサイズ毎にレスポンジブを対応させました。  
-[![Image from Gyazo](https://i.gyazo.com/c6abc42b80dfd7970fe0818cd53582f9.gif)]
+![c6abc42b80dfd7970fe0818cd53582f9 (1)](https://user-images.githubusercontent.com/64628395/85940587-3ffc9580-b958-11ea-92af-abd07717a5c3.gif)
 ・スマホサイズ（width 320px~767px）  
 ・タブレットサイズ（width 767px ~ 1023px）  
 ・PCサイズ（width 1023px ~ )  
