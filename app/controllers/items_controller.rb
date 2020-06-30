@@ -1,31 +1,23 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: %i[index show search]
-  # before_action :authenticate_user! , only: [:new]
+  before_action :show_tag, only: %i[index new create show]
+  before_action :find_item, only: %i[destroy show edit update]
 
   def index
     @items = Item.all.includes(:user).order(created_at: :desc).page(params[:page]).per(21)
-    @tags = Tag.all
   end
 
   def new
     @item = Item.new
-    @tags = Tag.all
-
-    2.times { @item.tags.build }
+    # 2.times { @item.tags.build }
   end
 
   def create
-    # Item.create(item_params)
-
-    # Item.create(item_params)
-    @tags = Tag.all
     @item = Item.new(item_params)
 
     if @item.save
       flash[:notice] = '投稿が完了しました。'
       redirect_to action: "index"
-      #  render :index
-      # render :index
     else # 作れてなかったら
       flash.now[:alert] = '画像URL,タイトル,タグを入力してください。'
       render :new
@@ -33,11 +25,9 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    # item = Item.find(params[:id])
-    # item.destroy
-    item = Item.find(params[:id])
+    # @item = Item.find(params[:id])
 
-    if item.destroy
+    if @item.destroy
       flash[:notice] = '投稿を削除しました。'
       redirect_to action: "index", notice: '投稿を削除しました。'
     else
@@ -48,21 +38,19 @@ class ItemsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @item = Item.find(params[:id])
-    @tags = Tag.all
+    # @item = Item.find(params[:id])
     @comments = @item.comments.includes(:user)
   end
 
   def edit
-    @item = Item.find(params[:id])
+    # @item = Item.find(params[:id])
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update(item_params)
+    # @item = Item.find(params[:id])
+    @item.update(item_params)
     flash[:notice] = '投稿内容を編集しました。'
     redirect_to action: 'index'
-    # redirect_to action: "index", notice: '投稿が完了しました。'
   end
 
   def search
@@ -82,16 +70,12 @@ class ItemsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
-  # def item_params
-  #   params.require(:item).permit(:title, :image, :text, tag_ids: []).merge(user_id: current_user.id)
-  # end
 
-  # # 追加
-  # def tag_params
-  #   params.require(:tag).permit(:id)
-  # end
+  def show_tag
+    @tags = Tag.all
+  end
 
-  # def item_params
-  #   params.require(:item).permit(:title, :image, :text, tag_ids: []).merge(user_id: current_user.id)
-  # end
+  def find_item
+    @item = Item.find(params[:id])
+  end
 end
