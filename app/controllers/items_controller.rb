@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: %i[index show search]
-  before_action :show_tag, only: [:index, :new, :create, :show]
+  before_action :show_tag, only: [:index,:new,:create,:show]
   # before_action :authenticate_user! , only: [:new]
 
   def index
