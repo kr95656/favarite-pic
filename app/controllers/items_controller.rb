@@ -1,23 +1,18 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: %i[index show search]
   before_action :show_tag, only: %i[index new create show]
+  before_action :find_item, only: %i[destroy]
 
   def index
     @items = Item.all.includes(:user).order(created_at: :desc).page(params[:page]).per(21)
-    # @tags = Tag.all
   end
 
   def new
     @item = Item.new
-    # @tags = Tag.all
-
-    # 2.times { @item.tags.build }
   end
 
   def create
-    # @tags = Tag.all
     @item = Item.new(item_params)
-
     if @item.save
       flash[:notice] = '投稿が完了しました。'
       redirect_to action: "index"
@@ -28,9 +23,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    item = Item.find(params[:id])
-
-    if item.destroy
+    # @item = Item.find(params[:id])
+    if @item.destroy
       flash[:notice] = '投稿を削除しました。'
       redirect_to action: "index", notice: '投稿を削除しました。'
     else
@@ -42,7 +36,6 @@ class ItemsController < ApplicationController
   def show
     @comment = Comment.new
     @item = Item.find(params[:id])
-    # @tags = Tag.all
     @comments = @item.comments.includes(:user)
   end
 
@@ -67,7 +60,6 @@ class ItemsController < ApplicationController
   end
 
   private
-
   def item_params
     params.require(:item).permit(:title, :image, :text, { tag_ids: [] }).merge(user_id: current_user.id)
   end
@@ -78,5 +70,9 @@ class ItemsController < ApplicationController
 
   def show_tag
     @tags = Tag.all
+  end
+
+  def find_item
+    @item = Item.find(params[:id])
   end
 end
