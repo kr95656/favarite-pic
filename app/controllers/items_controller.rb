@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: %i[index show search]
   before_action :show_tag, only: %i[index new create show]
-  before_action :find_item, only: %i[destroy]
+  before_action :find_item, only: %i[show destroy]
 
   def index
     @items = Item.all.includes(:user).order(created_at: :desc).page(params[:page]).per(21)
@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
 
   def show
     @comment = Comment.new
-    @item = Item.find(params[:id])
+    # @item = Item.find(params[:id])
     @comments = @item.comments.includes(:user)
   end
 
@@ -60,6 +60,7 @@ class ItemsController < ApplicationController
   end
 
   private
+
   def item_params
     params.require(:item).permit(:title, :image, :text, { tag_ids: [] }).merge(user_id: current_user.id)
   end
