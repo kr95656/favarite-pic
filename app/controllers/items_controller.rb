@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: %i[index show search]
   before_action :show_tag, only: %i[index new create show]
-  before_action :find_item, only: %i[edit show destroy]
+  before_action :find_item, only: %i[update edit show destroy]
 
   def index
     @items = Item.all.includes(:user).order(created_at: :desc).page(params[:page]).per(21)
@@ -40,8 +40,7 @@ class ItemsController < ApplicationController
   def edit; end
 
   def update
-    item = Item.find(params[:id])
-    item.update(item_params)
+    @item.update(item_params)
     flash[:notice] = '投稿内容を編集しました。'
     redirect_to action: 'index'
     # redirect_to action: "index", notice: '投稿が完了しました。'
