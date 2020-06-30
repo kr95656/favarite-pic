@@ -38,8 +38,7 @@ class ItemsController < ApplicationController
     @comments = @item.comments.includes(:user)
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @item.update(item_params)
