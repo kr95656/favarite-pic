@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: %i[index show search]
-  before_action :show_tag, only: [:index, :new, :create, :show]
+  before_action :show_tag, only: %i[index new create show]
   # before_action :authenticate_user! , only: [:new]
 
   def index
@@ -70,9 +70,8 @@ class ItemsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless user_signed_in?
   end
-  
+
   def show_tag
     @tags = Tag.all
   end
-
 end
