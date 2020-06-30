@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
-    # 2.times { @item.tags.build }
   end
 
   def create
@@ -25,8 +24,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    # @item = Item.find(params[:id])
-
     if @item.destroy
       flash[:notice] = '投稿を削除しました。'
       redirect_to action: "index", notice: '投稿を削除しました。'
@@ -38,16 +35,13 @@ class ItemsController < ApplicationController
 
   def show
     @comment = Comment.new
-    # @item = Item.find(params[:id])
     @comments = @item.comments.includes(:user)
   end
 
   def edit
-    # @item = Item.find(params[:id])
   end
 
   def update
-    # @item = Item.find(params[:id])
     @item.update(item_params)
     flash[:notice] = '投稿内容を編集しました。'
     redirect_to action: 'index'
