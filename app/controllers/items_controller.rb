@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_index, except: %i[index show search]
   before_action :show_tag, only: %i[index new create show]
-  before_action :find_item, only: %i[show destroy]
+  before_action :find_item, only: %i[edit show destroy]
 
   def index
     @items = Item.all.includes(:user).order(created_at: :desc).page(params[:page]).per(21)
@@ -23,7 +23,6 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    # @item = Item.find(params[:id])
     if @item.destroy
       flash[:notice] = '投稿を削除しました。'
       redirect_to action: "index", notice: '投稿を削除しました。'
@@ -35,12 +34,11 @@ class ItemsController < ApplicationController
 
   def show
     @comment = Comment.new
-    # @item = Item.find(params[:id])
     @comments = @item.comments.includes(:user)
   end
 
   def edit
-    @item = Item.find(params[:id])
+    # @item = Item.find(params[:id])
   end
 
   def update
