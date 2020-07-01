@@ -14,6 +14,6 @@ class TagsController < ApplicationController
   private
 
   def tag_show
-    @tags = Tag.all
+    @tags = Tag.all.includes(:items)
   end
 end
