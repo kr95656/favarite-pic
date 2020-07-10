@@ -21,7 +21,7 @@ FASHION PIC POST
   
 ## 本番環境  
   
-- デプロイ先 → heroku  
+- デプロイ先 → Heroku  
 - アプリ url → https://sheltered-bayou-43086.herokuapp.com/  
 - テストログイン（TEST Log in からログインできます) → https://sheltered-bayou-43086.herokuapp.com/users/sign_in  
   
@@ -106,7 +106,7 @@ MySQL2 -v 5.6
 
 ## 課題や今後実装したい機能
 
-- デプロイ先をherokuからawsに変更  
+- デプロイ先をHerokuからawsに変更  
 → 通信速度が遅く、これを解決するにはTokyoリージョンが使えようになるHeroku Private Spacesを利用することが望ましいと考えました。しかし、個人で契約するには少々手間がかかるとのことで、Tokyoリージョンが使えるawsへの変更を検討しています。
 - フォロー機能  
 → twitterで取り入れられている技術を習得することで新たな学びになると思い、実装する予定です。
